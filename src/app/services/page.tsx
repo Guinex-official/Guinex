@@ -43,7 +43,7 @@ export default function ServicesPage() {
                             {/* Card Header - Transparent style */}
                             <div className="bg-[#B0C4D6]/50 backdrop-blur-md py-3 md:py-4 px-4 md:px-6 text-center flex items-center justify-center space-x-3 md:space-x-4 rounded-t-2xl shadow-lg border-b border-white/20 w-full z-10 relative">
                                 <div className="w-6 h-6 md:w-8 md:h-8 relative flex-shrink-0">
-                                    <Image src="/images/icons/repasicon.png" fill alt="Repas" className="object-contain" />
+                                    <Image src="/images/icons/repasicon.png" fill alt="Repas" className="object-contain" priority />
                                 </div>
                                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#143D59]">
                                     Repas
@@ -65,7 +65,7 @@ export default function ServicesPage() {
                             {/* Card Header - Transparent style */}
                             <div className="bg-[#B0C4D6]/50 backdrop-blur-md py-3 md:py-4 px-4 md:px-6 text-center flex items-center justify-center space-x-3 md:space-x-4 rounded-t-2xl shadow-lg border-b border-white/20 w-full z-10 relative">
                                 <div className="w-6 h-6 md:w-8 md:h-8 relative flex-shrink-0">
-                                    <Image src="/images/icons/serviceicon.png" fill alt="Coursier" className="object-contain" />
+                                    <Image src="/images/icons/serviceicon.png" fill alt="Coursier" className="object-contain" priority />
                                 </div>
                                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#143D59]">
                                     Coursier

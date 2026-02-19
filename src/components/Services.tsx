@@ -16,7 +16,7 @@ export default function Services() {
                     <div className="flex flex-col">
                         {/* Card Header */}
                         <div className="bg-[#D1D9E1] py-3 px-6 text-center flex items-center justify-center space-x-3 rounded-t-2xl shadow-md w-full z-10 relative">
-                            <Image src="/images/icons/entrepriseicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" />
+                            <Image src="/images/icons/entrepriseicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" priority />
                             <h3 className="text-lg md:text-xl font-bold text-[#143D59]">
                                 Pour les entreprises
                             </h3>
@@ -26,13 +26,13 @@ export default function Services() {
                             <ul className="space-y-6">
                                 <li className="flex items-center text-[#143D59] text-base md:text-lg">
                                     <div className="mr-4 flex-shrink-0">
-                                        <Image src="/images/icons/repasicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" />
+                                        <Image src="/images/icons/repasicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" priority />
                                     </div>
                                     <span>Livraison de repas pour les équipes</span>
                                 </li>
                                 <li className="flex items-center text-[#143D59] text-base md:text-lg">
                                     <div className="mr-4 flex-shrink-0">
-                                        <Image src="/images/icons/serviceicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" />
+                                        <Image src="/images/icons/serviceicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" priority />
                                     </div>
                                     <span>Service coursier</span>
                                 </li>
@@ -44,7 +44,7 @@ export default function Services() {
                     <div className="flex flex-col">
                         {/* Card Header */}
                         <div className="bg-[#D1D9E1] py-3 px-6 text-center flex items-center justify-center space-x-3 rounded-t-2xl shadow-md w-full z-10 relative">
-                            <Image src="/images/icons/manicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" />
+                            <Image src="/images/icons/manicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" priority />
                             <h3 className="text-lg md:text-xl font-bold text-[#143D59]">
                                 Pour les particuliers
                             </h3>
@@ -54,19 +54,19 @@ export default function Services() {
                             <ul className="space-y-6">
                                 <li className="flex items-center text-[#143D59] text-base md:text-lg">
                                     <div className="mr-4 flex-shrink-0">
-                                        <Image src="/images/icons/repasicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" />
+                                        <Image src="/images/icons/repasicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" priority />
                                     </div>
                                     <span>Livraison de repas</span>
                                 </li>
                                 <li className="flex items-center text-[#143D59] text-base md:text-lg">
                                     <div className="mr-4 flex-shrink-0">
-                                        <Image src="/images/icons/colisicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" />
+                                        <Image src="/images/icons/colisicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" priority />
                                     </div>
                                     <span>Livraison de colis</span>
                                 </li>
                                 <li className="flex items-center text-[#143D59] text-base md:text-lg">
                                     <div className="mr-4 flex-shrink-0">
-                                        <Image src="/images/icons/document.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" />
+                                        <Image src="/images/icons/document.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" priority />
                                     </div>
                                     <span>Courses et documents</span>
                                 </li>

@@ -27,19 +27,19 @@ export default function Footer() {
                 <div className="md:w-fit mb-10 md:mb-0 md:mt-28 md:pl-12 lg:pl-16 md:border-l md:border-white/30 space-y-8 flex flex-col items-center md:items-start" suppressHydrationWarning>
                     <a href="tel:224610292029" className="flex items-center text-base md:text-lg font-medium hover:text-[#F4B41A] transition-colors group/phone">
                         <div className="mr-4 flex items-center justify-center">
-                            <Image src="/images/icons/phoneicon.png" width={24} height={24} alt="Phone" className="w-6 h-6 object-contain" />
+                            <Image src="/images/icons/phoneicon.png" width={24} height={24} alt="Phone" className="w-6 h-6 object-contain" priority />
                         </div>
                         <span className="text-base md:text-lg font-medium">610 29 20 29</span>
                     </a>
                     <div className="flex items-center text-base md:text-lg font-medium">
                         <div className="mr-4 flex items-center justify-center">
-                            <Image src="/images/icons/cityicon.png" width={24} height={24} alt="City" className="w-6 h-6 object-contain" />
+                            <Image src="/images/icons/cityicon.png" width={24} height={24} alt="City" className="w-6 h-6 object-contain" priority />
                         </div>
                         <span className="text-base md:text-lg font-medium">Conakry, Guinée</span>
                     </div>
                     <a href="mailto:guinex.contact@gmail.com" className="flex items-center text-base md:text-lg font-medium hover:text-[#F4B41A] transition-colors group/email">
                         <div className="mr-4 flex items-center justify-center">
-                            <Image src="/images/icons/emailicon.png" width={24} height={24} alt="Email" className="w-6 h-6 object-contain" />
+                            <Image src="/images/icons/emailicon.png" width={24} height={24} alt="Email" className="w-6 h-6 object-contain" priority />
                         </div>
                         <span className="text-base md:text-lg font-medium shrink-0">guinex.contact@gmail.com</span>
                     </a>

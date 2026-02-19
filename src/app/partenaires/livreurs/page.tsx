@@ -157,12 +157,12 @@ export default function LivreursPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 w-full max-w-6xl px-4 md:px-8">
 
                     {/* Left: Conditions */}
-                    <div className="flex flex-col pt-8">
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#143D59] mb-10">
+                    <div className="flex flex-col pt-8 items-center lg:items-start">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#143D59] mb-10 text-center lg:text-left whitespace-nowrap">
                             Conditions pour postuler
                         </h2>
 
-                        <ul className="space-y-6">
+                        <ul className="space-y-6 w-full max-w-sm lg:max-w-none">
                             {[
                                 "Avoir un permis de conduire",
                                 "Avoir un téléphone Android",
@@ -170,11 +170,13 @@ export default function LivreursPage() {
                                 "Pièce d'identité valide",
                                 "Savoir lire et utiliser WhatsApp / Google Maps"
                             ].map((condition, index) => (
-                                <li key={index} className="flex items-start gap-4">
-                                    <div className="bg-[#25D366] rounded-md p-1 mt-1 shrink-0">
+                                <li key={index} className="flex items-start lg:items-center gap-4 justify-start lg:justify-start">
+                                    <div className="bg-[#25D366] rounded-md p-1 mt-1 lg:mt-0 shrink-0">
                                         <CheckCircle2 className="w-5 h-5 text-white" strokeWidth={3} />
                                     </div>
-                                    <span className="text-[#143D59] font-bold text-lg md:text-xl">{condition}</span>
+                                    <span className="text-[#143D59] font-bold text-lg md:text-xl text-left">
+                                        {condition}
+                                    </span>
                                 </li>
                             ))}
                         </ul>

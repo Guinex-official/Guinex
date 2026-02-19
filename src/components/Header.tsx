@@ -181,12 +181,9 @@ export default function Header() {
                         Accueil
                     </Link>
                     <Link
-                        href="/#services"
-                        className={isActive("/", "#services") ? "text-[#F4B41A]" : "text-[#143D59]"}
-                        onClick={() => {
-                            setIsMenuOpen(false);
-                            setCurrentHash("#services");
-                        }}
+                        href="/services"
+                        className={isActive("/services") ? "text-[#F4B41A]" : "text-[#143D59]"}
+                        onClick={() => setIsMenuOpen(false)}
                     >
                         Services
                     </Link>
