@@ -11,6 +11,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Guinex - Livraison Express en Guinée",
   description: "La livraison simple, rapide et professionnelle en Guinée",
+  icons: {
+    icon: "/images/brand/logoheader.png",
+    apple: "/images/brand/logoheader.png",
+  },
   other: {
     google: "notranslate",
   },

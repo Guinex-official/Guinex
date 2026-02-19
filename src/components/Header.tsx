@@ -4,12 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import ContactModal from "./ui/ContactModal";
-
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isPartnersOpen, setIsPartnersOpen] = useState(false);
-    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
     const [currentHash, setCurrentHash] = useState("");
     const pathname = usePathname();
     const headerRef = useRef<HTMLElement>(null);
@@ -77,7 +74,7 @@ export default function Header() {
     const isPartnerActive = pathname.startsWith("/partenaires");
 
     return (
-        <header ref={headerRef} className="sticky top-0 z-50 bg-white shadow-sm" suppressHydrationWarning>
+        <header ref={headerRef} className="sticky top-0 z-50 bg-white shadow-sm" style={{ backgroundColor: '#ffffff' }} suppressHydrationWarning>
             <div className="container mx-auto max-w-7xl px-4 py-3 md:py-5 flex justify-between items-center" suppressHydrationWarning>
                 {/* Logo Container */}
                 <div className="flex-shrink-0 w-[120px] md:w-[150px]" suppressHydrationWarning>
@@ -103,9 +100,8 @@ export default function Header() {
                         Accueil
                     </Link>
                     <Link
-                        href="/#services"
-                        className={`transition-colors ${isActive("/", "#services") ? "text-[#F4B41A]" : "text-[#143D59] hover:text-[#F4B41A]"}`}
-                        onClick={() => setCurrentHash("#services")}
+                        href="/services"
+                        className={`transition-colors ${isActive("/services") ? "text-[#F4B41A]" : "text-[#143D59] hover:text-[#F4B41A]"}`}
                     >
                         Services
                     </Link>
@@ -128,7 +124,7 @@ export default function Header() {
                                     <Link
                                         key={link.name}
                                         href={link.href}
-                                        className="block px-4 py-2 text-[#143D59] hover:bg-gray-50 hover:text-[#F4B41A] transition-colors text-base font-medium"
+                                        className={`block px-4 py-2 transition-colors text-base font-medium ${pathname === link.href ? "text-[#F4B41A]" : "text-[#143D59] hover:bg-gray-50 hover:text-[#F4B41A]"}`}
                                         onClick={() => setIsPartnersOpen(false)}
                                     >
                                         {link.name}
@@ -144,12 +140,12 @@ export default function Header() {
                     >
                         À propos
                     </Link>
-                    <button
-                        onClick={() => setIsContactModalOpen(true)}
-                        className="text-[#143D59] hover:text-[#F4B41A] transition-colors font-bold text-lg"
+                    <Link
+                        href="/contact"
+                        className={`transition-colors ${isActive("/contact") ? "text-[#F4B41A]" : "text-[#143D59] hover:text-[#F4B41A]"}`}
                     >
-                        Contact
-                    </button>
+                        contact
+                    </Link>
                 </nav>
 
                 {/* Mobile Menu Button / Spacer for centering */}
@@ -214,22 +210,15 @@ export default function Header() {
                     >
                         À propos
                     </Link>
-                    <button
-                        onClick={() => {
-                            setIsMenuOpen(false);
-                            setIsContactModalOpen(true);
-                        }}
-                        className="text-[#143D59] hover:text-[#F4B41A] text-left font-bold"
+                    <Link
+                        href="/contact"
+                        className={isActive("/contact") ? "text-[#F4B41A]" : "text-[#143D59]"}
+                        onClick={() => setIsMenuOpen(false)}
                     >
-                        Contact
-                    </button>
+                        contact
+                    </Link>
                 </div>
             )}
-
-            <ContactModal
-                isOpen={isContactModalOpen}
-                onClose={() => setIsContactModalOpen(false)}
-            />
         </header>
     );
 }

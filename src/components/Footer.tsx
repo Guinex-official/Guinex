@@ -17,10 +17,9 @@ export default function Footer() {
                         />
                     </div>
                     <div className="space-y-3 text-base md:text-lg font-medium">
-                        <Link href="#" className="block hover:text-[#F4B41A] transition-colors underline decoration-1 underline-offset-4">• Facebook</Link>
-                        <Link href="#" className="block hover:text-[#F4B41A] transition-colors underline decoration-1 underline-offset-4">• LinkedIn</Link>
-                        <Link href="#" className="block hover:text-[#F4B41A] transition-colors underline decoration-1 underline-offset-4">• Instagram</Link>
-                        <Link href="#" className="block hover:text-[#F4B41A] transition-colors underline decoration-1 underline-offset-4">• Whatsapp</Link>
+                        <Link href="https://www.facebook.com/profile.php?id=61586797093987&mibextid=wwXIfr" target="_blank" className="block hover:text-[#F4B41A] transition-colors underline decoration-1 underline-offset-4">• Facebook</Link>
+                        <Link href="https://www.linkedin.com/company/guinex-livraison-logistique/about/" target="_blank" className="block hover:text-[#F4B41A] transition-colors underline decoration-1 underline-offset-4">• LinkedIn</Link>
+                        <Link href="https://api.whatsapp.com/message/YSOEJ42GH54ED1?autoload=1&app_absent=0" target="_blank" className="block hover:text-[#F4B41A] transition-colors underline decoration-1 underline-offset-4">• Whatsapp</Link>
                     </div>
                 </div>
 
