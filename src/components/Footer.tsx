@@ -67,7 +67,7 @@ export default function Footer() {
                     src="/images/shared/backgroundfooter.png"
                     alt="Support"
                     layout="fill"
-                    objectFit="fill"
+                    objectFit="cover"
                     objectPosition="right bottom"
                 />
             </div>

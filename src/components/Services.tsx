@@ -44,7 +44,7 @@ export default function Services() {
                     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden flex flex-col hover:shadow-xl transition-shadow">
                         {/* Card Header */}
                         <div className="bg-[#D1D9E1] py-3 px-6 text-center flex items-center justify-center space-x-3">
-                            <Image src="/images/icons/manicon.png" width={20} height={20} alt="icon" className="w-5 h-5 object-contain" />
+                            <Image src="/images/icons/manicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" />
                             <h3 className="text-lg md:text-xl font-bold text-[#143D59]">
                                 Pour les particuliers
                             </h3>
