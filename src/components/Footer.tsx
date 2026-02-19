@@ -55,7 +55,6 @@ export default function Footer() {
             <div className="container mx-auto max-w-7xl px-4 relative z-10" suppressHydrationWarning>
                 <div className="border-t border-white/20 pt-8 pb-12 text-center">
                     <div className="flex flex-col items-center">
-                        <div className="h-1 w-12 bg-[#F4B41A] rounded-full mb-8"></div>
                         <p className="text-sm md:text-base text-white/70 font-medium tracking-wide">
                             © 2026 <span className="text-[#F4B41A]">Guinex Livraison Express</span>. Tous droits réservés.
                         </p>
