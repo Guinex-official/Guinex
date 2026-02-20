@@ -45,10 +45,25 @@ export default function Footer() {
                         <span className="text-base md:text-lg font-medium shrink-0">guinex.contact@gmail.com</span>
                     </a>
                 </div>
-                {/* Right Column: Image (Woman) */}
-                {/* Note: In the design, the woman is on the right, overlapping the footer. 
-                 I'll position her absolutely or as a flex item depending on the image cut. 
-                 Assuming absolute for the 'overflow' look. */}
+                {/* Right Column: Google Play Section */}
+                <div className="md:w-fit md:mt-28 md:pl-12 lg:pl-16 md:border-l md:border-white/30 flex flex-col items-center md:items-start w-full md:w-auto mt-10 md:mt-28" suppressHydrationWarning>
+                    <div className="flex flex-col items-center md:items-start mb-6 font-black uppercase italic tracking-tighter leading-[0.9]">
+                        <span className="text-[#F4B41A] text-2xl md:text-3xl">Application</span>
+                        <span className="text-blue-400 text-3xl md:text-4xl">bientôt</span>
+                        <span className="text-[#F4B41A] text-2xl md:text-3xl">disponible</span>
+                    </div>
+                    <div className="relative group">
+                        <div className="absolute -inset-1 bg-white/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
+                        <Image
+                            src="/images/googleplay.PNG"
+                            width={160}
+                            height={48}
+                            alt="Google Play"
+                            className="relative object-contain h-12 w-auto brightness-110"
+                            priority
+                        />
+                    </div>
+                </div>
             </div>
 
             {/* Copyright Section */}
