@@ -65,18 +65,18 @@ export default function Hero() {
             </div>
 
             {/* Content */}
-            <div className="container mx-auto max-w-7xl px-4 z-10 relative h-full flex items-center" suppressHydrationWarning>
-                <div className="max-w-3xl text-white mb-2 -mt-44 md:mb-8 md:-mt-12" suppressHydrationWarning>
+            <div className="container mx-auto max-w-7xl px-4 z-10 relative h-full flex items-center justify-center lg:justify-start" suppressHydrationWarning>
+                <div className="max-w-3xl text-white mb-2 -mt-44 md:mb-8 md:-mt-12 text-center lg:text-left mx-auto lg:mx-0" suppressHydrationWarning>
                     <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 tracking-tight drop-shadow-lg">
                         <span className="whitespace-nowrap inline-block">
                             <span className="text-white">La livraison </span>
                             <span className="text-[#F4B41A]">simple, rapide</span>
                         </span>
                         <br className="block" />
-                        <span className="inline whitespace-nowrap text-white">et professionnelle <span className="font-extralight text-white">en Guinée</span></span>
+                        <span className="inline-block whitespace-nowrap text-white">et professionnelle <span className="font-extralight text-white">en Guinée</span></span>
                     </h1>
 
-                    <div className="flex flex-wrap items-center gap-x-3 text-lg sm:text-xl md:text-xl lg:text-2xl mb-4 md:mb-6 font-light max-w-xl" suppressHydrationWarning>
+                    <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-3 text-lg sm:text-xl md:text-xl lg:text-2xl mb-4 md:mb-6 font-light max-w-xl mx-auto lg:mx-0" suppressHydrationWarning>
                         {services.map((service, index) => (
                             <div key={service} className="flex items-center">
                                 <span

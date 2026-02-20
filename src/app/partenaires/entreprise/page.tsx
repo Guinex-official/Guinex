@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Zap, ShieldCheck, Clock, CheckCircle2, Package, Utensils, MapPin } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ui/ContactModal";
@@ -15,7 +15,7 @@ export default function EntreprisePage() {
             <Header />
 
             {/* Hero Section */}
-            <section className="relative w-full min-h-[800px] flex flex-col items-center justify-start pt-10 pb-20 overflow-hidden">
+            <section className="relative w-full min-h-[85vh] flex flex-col items-center justify-start pt-10 pb-16 overflow-hidden">
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <Image
@@ -27,50 +27,54 @@ export default function EntreprisePage() {
                         priority
                         sizes="100vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/20 to-white/90"></div>
+                    {/* Dark Professional Overlay */}
+                    <div className="absolute inset-0 bg-[#143D59]/85 backdrop-blur-[2px]"></div>
                 </div>
 
                 <div className="relative z-10 w-full max-w-6xl px-4 flex flex-col items-center">
 
                     {/* Hero Title */}
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#143D59] text-center leading-tight mt-12 md:mt-24 lg:mt-32 mb-12 md:mb-24 lg:mb-32 drop-shadow-sm max-w-4xl">
-                        Gérez facilement toutes vos <br className="hidden md:block" />
-                        <span className="text-[#143D59] drop-shadow-md">livraisons professionnelles</span>
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white text-center leading-[1.1] mt-8 sm:mt-12 md:mt-24 lg:mt-32 mb-8 sm:mb-12 md:mb-16 drop-shadow-md max-w-4xl px-2">
+                        Gérez facilement toutes vos <br />
+                        <span className="text-[#F4B41A]">livraisons professionnelles</span>
                     </h1>
 
                     {/* Services Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
-                        {/* Card 1 */}
-                        <div className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-lg flex flex-col h-full transform transition-transform hover:-translate-y-1 border border-white/20">
-                            <div className="bg-white/20 p-4 text-center border-b border-white/10">
-                                <h3 className="text-lg font-bold text-[#143D59]">Commandez une course</h3>
+                        {/* Card 1: Courses */}
+                        <div className="flex flex-col h-full bg-white rounded-xl shadow-xl overflow-hidden transform transition-all hover:scale-[1.01] duration-300">
+                            <div className="bg-[#F4B41A] p-4 flex items-center justify-center gap-3">
+                                <Package className="w-5 h-5 text-[#143D59] shrink-0" />
+                                <h3 className="text-sm md:text-base font-extrabold text-[#143D59] uppercase tracking-wide">Commandez une course</h3>
                             </div>
-                            <div className="p-8 flex items-center justify-center flex-grow">
-                                <p className="text-[#143D59] text-center text-lg font-medium leading-relaxed">
+                            <div className="p-6 flex items-center justify-center flex-grow bg-[#eff1f3]">
+                                <p className="text-[#143D59] text-center text-sm md:text-base font-bold leading-relaxed">
                                     Envoyez vos documents <br /> et colis rapidement
                                 </p>
                             </div>
                         </div>
 
-                        {/* Card 2 */}
-                        <div className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-lg flex flex-col h-full transform transition-transform hover:-translate-y-1 border border-white/20">
-                            <div className="bg-white/30 p-4 text-center border-b-[3px] border-[#F4B41A]">
-                                <h3 className="text-lg font-bold text-[#143D59]">Livraisons de repas</h3>
+                        {/* Card 2: Repas */}
+                        <div className="flex flex-col h-full bg-white rounded-xl shadow-xl overflow-hidden transform transition-all hover:scale-[1.01] duration-300">
+                            <div className="bg-[#143D59] p-4 flex items-center justify-center gap-3">
+                                <Utensils className="w-5 h-5 text-[#F4B41A] shrink-0" />
+                                <h3 className="text-sm md:text-base font-extrabold text-white uppercase tracking-wide">Livraisons de repas</h3>
                             </div>
-                            <div className="p-8 flex items-center justify-center flex-grow">
-                                <p className="text-[#143D59] text-center text-lg font-medium leading-relaxed">
+                            <div className="p-6 flex items-center justify-center flex-grow bg-[#eff1f3]">
+                                <p className="text-[#143D59] text-center text-sm md:text-base font-bold leading-relaxed">
                                     Commandez pour <br /> vos équipes
                                 </p>
                             </div>
                         </div>
 
-                        {/* Card 3 */}
-                        <div className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-lg flex flex-col h-full transform transition-transform hover:-translate-y-1 border border-white/20">
-                            <div className="bg-white/20 p-4 text-center border-b border-white/10">
-                                <h3 className="text-lg font-bold text-[#143D59]">Suivi en temps réel</h3>
+                        {/* Card 3: Suivi */}
+                        <div className="flex flex-col h-full bg-white rounded-xl shadow-xl overflow-hidden transform transition-all hover:scale-[1.01] duration-300">
+                            <div className="bg-[#F4B41A] p-4 flex items-center justify-center gap-3">
+                                <MapPin className="w-5 h-5 text-[#143D59] shrink-0" />
+                                <h3 className="text-sm md:text-base font-extrabold text-[#143D59] uppercase tracking-wide">Suivi en temps réel</h3>
                             </div>
-                            <div className="p-8 flex items-center justify-center flex-grow">
-                                <p className="text-[#143D59] text-center text-lg font-medium leading-relaxed">
+                            <div className="p-6 flex items-center justify-center flex-grow bg-[#eff1f3]">
+                                <p className="text-[#143D59] text-center text-sm md:text-base font-bold leading-relaxed">
                                     Sachez où se trouve <br /> votre livraison
                                 </p>
                             </div>
@@ -79,53 +83,68 @@ export default function EntreprisePage() {
                 </div>
             </section>
 
-            {/* "Pourquoi choisir Guinex" Section */}
-            <section className="w-full pb-20 pt-10 bg-white flex flex-col items-center">
-                <div className="w-full max-w-5xl px-4 border border-[#143D59] rounded-3xl p-8 md:p-12 relative bg-white shadow-sm">
-                    <h2 className="text-2xl md:text-3xl font-bold text-center text-black mb-10">
-                        Pourquoi choisir Guinex
-                    </h2>
+            {/* "Pourquoi choisir Guinex" Section - Premium Minimalist */}
+            <section className="w-full pb-12 pt-20 bg-white flex flex-col items-center">
+                <div className="w-full max-w-5xl px-4">
+                    <div className="flex flex-col items-center mb-12">
+                        <div className="h-1 w-12 bg-[#F4B41A] mb-4 rounded-full"></div>
+                        <h2 className="text-3xl md:text-4xl font-extrabold text-[#143D59] text-center">
+                            Pourquoi choisir Guinex ?
+                        </h2>
+                    </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                        {/* Feature 1 */}
-                        <div className="bg-[#EAEAEA] rounded-lg p-6 flex flex-col items-center text-center shadow-sm">
-                            <h3 className="text-lg font-bold text-black mb-1">Rapidité</h3>
-                            <p className="text-black opacity-80">Livraison express</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
+                        {/* Feature 1: Rapidité */}
+                        <div className="bg-white rounded-xl p-6 flex flex-col items-center text-center border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                            <div className="w-12 h-12 bg-[#F4B41A]/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-[#F4B41A]/20 transition-colors">
+                                <Zap className="w-6 h-6 text-[#F4B41A]" fill="#F4B41A" fillOpacity="0.2" />
+                            </div>
+                            <h3 className="text-lg font-bold text-[#143D59] mb-2">Rapidité</h3>
+                            <p className="text-[#143D59]/60 text-sm font-medium leading-relaxed">Livraison express en zone urbaine</p>
                         </div>
 
-                        {/* Feature 2 */}
-                        <div className="bg-[#EAEAEA] rounded-lg p-6 flex flex-col items-center text-center shadow-sm">
-                            <h3 className="text-lg font-bold text-black mb-1">Fiabilité</h3>
-                            <p className="text-black opacity-80">Service dédié aux entreprises</p>
+                        {/* Feature 2: Fiabilité */}
+                        <div className="bg-white rounded-xl p-6 flex flex-col items-center text-center border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                            <div className="w-12 h-12 bg-[#143D59]/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-[#143D59]/20 transition-colors">
+                                <CheckCircle2 className="w-6 h-6 text-[#143D59]" />
+                            </div>
+                            <h3 className="text-lg font-bold text-[#143D59] mb-2">Fiabilité</h3>
+                            <p className="text-[#143D59]/60 text-sm font-medium leading-relaxed">Service dédié aux professionnels</p>
                         </div>
 
-                        {/* Feature 3 */}
-                        <div className="bg-[#EAEAEA] rounded-lg p-6 flex flex-col items-center text-center shadow-sm">
-                            <h3 className="text-lg font-bold text-black mb-1">Sécurité</h3>
-                            <p className="text-black opacity-80">Transport sécurisé</p>
+                        {/* Feature 3: Sécurité */}
+                        <div className="bg-white rounded-xl p-6 flex flex-col items-center text-center border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                            <div className="w-12 h-12 bg-[#143D59]/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-[#143D59]/20 transition-colors">
+                                <ShieldCheck className="w-6 h-6 text-[#143D59]" fill="#143D59" fillOpacity="0.1" />
+                            </div>
+                            <h3 className="text-lg font-bold text-[#143D59] mb-2">Sécurité</h3>
+                            <p className="text-[#143D59]/60 text-sm font-medium leading-relaxed">Transport sécurisé et garanti</p>
                         </div>
 
-                        {/* Feature 4 */}
-                        <div className="bg-[#EAEAEA] rounded-lg p-6 flex flex-col items-center text-center shadow-sm">
-                            <h3 className="text-lg font-bold text-black mb-1">Gain de temps</h3>
-                            <p className="text-black opacity-80">Pour vos équipes</p>
+                        {/* Feature 4: Gain de temps */}
+                        <div className="bg-white rounded-xl p-6 flex flex-col items-center text-center border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                            <div className="w-12 h-12 bg-[#F4B41A]/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-[#F4B41A]/20 transition-colors">
+                                <Clock className="w-6 h-6 text-[#F4B41A]" />
+                            </div>
+                            <h3 className="text-lg font-bold text-[#143D59] mb-2">Flexibilité</h3>
+                            <p className="text-[#143D59]/60 text-sm font-medium leading-relaxed">Un gain de temps pour vos équipes</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* CTA Section */}
-            <section className="w-full py-16 flex flex-col items-center text-center bg-white">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#143D59] mb-8">
-                    Besoin d’une course urgente ?
-                </h2>
+            <section className="w-full pt-4 pb-20 flex flex-col items-center text-center bg-white px-4">
+                <div className="flex flex-col items-center mb-8">
+                    <span className="text-[#F4B41A] font-bold text-sm tracking-widest uppercase mb-2">Contactez-nous</span>
+                    <h2 className="text-3xl md:text-4xl font-black text-[#143D59] text-center">
+                        Besoin d’une course <span className="text-[#F4B41A]">urgente ?</span>
+                    </h2>
+                </div>
                 <button
                     onClick={() => setIsModalOpen(true)}
-                    className="inline-flex items-center gap-3 bg-[#F4B41A] text-[#143D59] font-bold py-3 px-8 rounded-md shadow-md hover:bg-yellow-500 transition-colors text-lg"
+                    className="bg-[#F4B41A] text-[#143D59] font-bold py-3 px-8 rounded-md shadow-md hover:bg-yellow-500 transition-colors text-lg"
                 >
-                    <div className="bg-[#25D366] rounded-full p-1">
-                        <MessageCircle className="w-5 h-5 text-white" fill="white" />
-                    </div>
                     contactez Guinex maintenant
                 </button>
             </section>

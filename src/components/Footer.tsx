@@ -6,7 +6,7 @@ export default function Footer() {
         <footer id="contact" className="bg-[#143D59] text-white pt-24 relative overflow-hidden" suppressHydrationWarning>
             <div className="container mx-auto max-w-7xl px-4 flex flex-col md:flex-row relative z-10 pb-16" suppressHydrationWarning>
                 {/* Left Column: Logo & Socials */}
-                <div className="md:w-fit mb-10 md:mb-0 flex flex-col items-center md:items-start text-center md:text-left md:pr-1 lg:pr-1" suppressHydrationWarning>
+                <div className="md:w-fit mb-10 md:mb-0 flex flex-col items-center md:items-start text-center md:text-left md:pr-1 lg:pr-1 w-full md:w-auto" suppressHydrationWarning>
                     <div className="mb-6" suppressHydrationWarning>
                         <Image
                             src="/images/brand/logofooter.png"
@@ -16,7 +16,7 @@ export default function Footer() {
                             className="object-contain w-[140px] md:w-[160px]"
                         />
                     </div>
-                    <div className="space-y-3 text-base md:text-lg font-medium">
+                    <div className="space-y-3 text-base md:text-lg font-medium w-full flex flex-col items-center md:items-start">
                         <Link href="https://www.facebook.com/profile.php?id=61586797093987&mibextid=wwXIfr" target="_blank" className="block hover:text-[#F4B41A] transition-colors underline decoration-1 underline-offset-4">• Facebook</Link>
                         <Link href="https://www.instagram.com/guinex_livraison?igsh=Z2ZvY3d2dXpjZDhl&utm_source=qr" target="_blank" className="block hover:text-[#F4B41A] transition-colors underline decoration-1 underline-offset-4">• Instagram</Link>
                         <Link href="https://www.linkedin.com/company/guinex-livraison-logistique/about/" target="_blank" className="block hover:text-[#F4B41A] transition-colors underline decoration-1 underline-offset-4">• LinkedIn</Link>
@@ -25,21 +25,21 @@ export default function Footer() {
                 </div>
 
                 {/* Middle Column: Contact Info with Separator */}
-                <div className="md:w-fit mb-10 md:mb-0 md:mt-28 md:pl-12 lg:pl-16 md:border-l md:border-white/30 space-y-8 flex flex-col items-center md:items-start" suppressHydrationWarning>
-                    <a href="tel:224610292029" className="flex items-center text-base md:text-lg font-medium hover:text-[#F4B41A] transition-colors group/phone">
-                        <div className="mr-4 flex items-center justify-center">
+                <div className="md:w-fit mb-10 md:mb-0 md:mt-28 md:pl-12 lg:pl-16 md:border-l md:border-white/30 space-y-8 flex flex-col items-center md:items-start w-full md:w-auto" suppressHydrationWarning>
+                    <a href="tel:224610292029" className="flex flex-col md:flex-row items-center text-base md:text-lg font-medium hover:text-[#F4B41A] transition-colors group/phone text-center md:text-left">
+                        <div className="mb-2 md:mb-0 md:mr-4 flex items-center justify-center">
                             <Image src="/images/icons/phoneicon.png" width={24} height={24} alt="Phone" className="w-6 h-6 object-contain" priority />
                         </div>
                         <span className="text-base md:text-lg font-medium">610 29 20 29</span>
                     </a>
-                    <div className="flex items-center text-base md:text-lg font-medium">
-                        <div className="mr-4 flex items-center justify-center">
+                    <div className="flex flex-col md:flex-row items-center text-base md:text-lg font-medium text-center md:text-left">
+                        <div className="mb-2 md:mb-0 md:mr-4 flex items-center justify-center">
                             <Image src="/images/icons/cityicon.png" width={24} height={24} alt="City" className="w-6 h-6 object-contain" priority />
                         </div>
                         <span className="text-base md:text-lg font-medium">Conakry, Guinée</span>
                     </div>
-                    <a href="mailto:guinex.contact@gmail.com" className="flex items-center text-base md:text-lg font-medium hover:text-[#F4B41A] transition-colors group/email">
-                        <div className="mr-4 flex items-center justify-center">
+                    <a href="mailto:guinex.contact@gmail.com" className="flex flex-col md:flex-row items-center text-base md:text-lg font-medium hover:text-[#F4B41A] transition-colors group/email text-center md:text-left">
+                        <div className="mb-2 md:mb-0 md:mr-4 flex items-center justify-center">
                             <Image src="/images/icons/emailicon.png" width={24} height={24} alt="Email" className="w-6 h-6 object-contain" priority />
                         </div>
                         <span className="text-base md:text-lg font-medium shrink-0">guinex.contact@gmail.com</span>

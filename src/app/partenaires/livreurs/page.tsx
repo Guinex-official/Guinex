@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import Image from "next/image";
-import { CheckCircle2, Loader2, PartyPopper } from "lucide-react";
+import { Wallet, Clock, Users, ShieldCheck, CheckCircle2, Loader2, PartyPopper } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -150,234 +150,277 @@ export default function LivreursPage() {
             </section>
 
             {/* Section: Pourquoi devenir livreur Guinex */}
-            <section className="w-full py-16 md:py-24 bg-white flex flex-col items-center">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#143D59] text-center mb-16">
-                    Pourquoi devenir livreur Guinex
+            <section className="w-full py-20 md:py-28 bg-[#eff1f3]/50 flex flex-col items-center">
+                <h2 className="text-3xl md:text-4xl font-extrabold text-[#143D59] text-center mb-16 tracking-tight">
+                    Pourquoi devenir <span className="text-[#F4B41A]">livreur Guinex</span> ?
                 </h2>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl px-4 md:px-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl px-4 md:px-8">
                     {[
-                        { title: "Revenus réguliers", text: "Gagnez de l'argent à chaque course" },
-                        { title: "Horaires flexibles", text: "choisissez vos horaires et travaillez à votre rythme" },
-                        { title: "Organisation professionnelle", text: "Travaillez avec une équipe serieuse et organisée" },
-                        { title: "Respect et sécurité", text: "Rejoignez une entreprise qui valorise votre sécurité et votre bien être" }
+                        {
+                            title: "Revenus réguliers",
+                            text: "Gagnez de l'argent à chaque course effectuée en ville.",
+                            icon: Wallet,
+                            color: "bg-[#143D59]/10 text-[#143D59]"
+                        },
+                        {
+                            title: "Horaires flexibles",
+                            text: "Choisissez vos créneaux et travaillez à votre propre rythme.",
+                            icon: Clock,
+                            color: "bg-[#F4B41A]/10 text-[#F4B41A]"
+                        },
+                        {
+                            title: "Equipe sérieuse",
+                            text: "Rejoignez une organisation fiable et bien structurée.",
+                            icon: Users,
+                            color: "bg-[#143D59]/10 text-[#143D59]"
+                        },
+                        {
+                            title: "Respect & Sécurité",
+                            text: "Nous valorisons votre sécurité et votre bien-être au quotidien.",
+                            icon: ShieldCheck,
+                            color: "bg-[#F4B41A]/10 text-[#F4B41A]"
+                        }
                     ].map((benefit, i) => (
-                        <div key={i} className="flex flex-col group">
-                            {/* Card Header matching Services style (without icon) */}
-                            <div className="bg-[#D1D9E1] py-4 px-6 text-center flex items-center justify-center rounded-t-2xl shadow-md w-full z-10 relative">
-                                <h3 className="text-base font-bold text-[#143D59] leading-tight line-clamp-1">{benefit.title}</h3>
+                        <div key={i} className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center group">
+                            <div className={`p-4 rounded-2xl mb-6 transition-transform group-hover:scale-110 ${benefit.color}`}>
+                                <benefit.icon className="w-10 h-10" />
                             </div>
-                            {/* Card Body matching Services style */}
-                            <div className="bg-[#eff1f3] rounded-b-2xl shadow-sm group-hover:shadow-md transition-shadow p-8 flex-grow border border-gray-100 border-t-0 w-full flex items-center justify-center min-h-[140px]">
-                                <p className="text-[#143D59] text-center font-medium text-sm md:text-base leading-relaxed">
-                                    {benefit.text}
-                                </p>
-                            </div>
+                            <h3 className="text-xl font-extrabold text-[#143D59] mb-4">{benefit.title}</h3>
+                            <p className="text-[#143D59]/70 font-medium leading-relaxed">
+                                {benefit.text}
+                            </p>
                         </div>
                     ))}
                 </div>
             </section>
 
-            {/* Section: Conditions and Form */}
-            <section id="formulaire-candidature" className="w-full py-16 md:py-24 bg-white flex flex-col items-center">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 w-full max-w-6xl px-4 md:px-8">
-
-                    {/* Left: Conditions */}
-                    <div className="flex flex-col pt-8 items-center lg:items-start">
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#143D59] mb-10 text-center lg:text-left whitespace-nowrap">
-                            Conditions pour postuler
+            {/* Section: Conditions and Form (Parcours Express) */}
+            <section id="formulaire-candidature" className="w-full py-14 bg-white flex flex-col items-center">
+                <div className="w-full max-w-6xl px-4 md:px-8">
+                    <div className="flex flex-col items-center text-center mb-10">
+                        <span className="text-[#F4B41A] font-bold text-sm tracking-[0.3em] uppercase mb-4">Rejoignez-nous</span>
+                        <h2 className="text-4xl md:text-5xl font-black text-[#143D59] mb-4">
+                            Votre <span className="text-[#F4B41A]">Parcours Express</span>
                         </h2>
-
-                        <ul className="space-y-6 w-full max-w-sm lg:max-w-none">
-                            {[
-                                "Avoir un permis de conduire",
-                                "Avoir un téléphone Android",
-                                "Bien connaître la ville",
-                                "Pièce d'identité valide",
-                                "Savoir lire et utiliser WhatsApp / Google Maps"
-                            ].map((condition, index) => (
-                                <li key={index} className="flex items-start lg:items-center gap-4 justify-start lg:justify-start">
-                                    <div className="bg-[#25D366] rounded-md p-1 mt-1 lg:mt-0 shrink-0">
-                                        <CheckCircle2 className="w-5 h-5 text-white" strokeWidth={3} />
-                                    </div>
-                                    <span className="text-[#143D59] font-bold text-lg md:text-xl text-left">
-                                        {condition}
-                                    </span>
-                                </li>
-                            ))}
-                        </ul>
+                        <p className="text-gray-500 font-medium max-w-xl">
+                            Devenez partenaire en quelques minutes. Vérifiez vos prérequis et remplissez votre dossier.
+                        </p>
                     </div>
 
-                    {/* Right: Form */}
-                    <div className="bg-[#F1F4F7]/50 rounded-3xl p-8 md:p-10 shadow-lg border border-gray-100 flex flex-col gap-8 relative overflow-hidden">
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#143D59] text-center mb-2 whitespace-nowrap">
-                            Formulaire de candidature
-                        </h2>
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        {/* Left: Interactive Checklist (Prêt à démarrer ?) */}
+                        <div className="lg:col-span-5 flex flex-col">
+                            <div className="bg-[#143D59] rounded-[2rem] p-6 md:p-8 shadow-2xl relative overflow-hidden group">
+                                {/* Decorative circle */}
+                                <div className="absolute -top-20 -right-20 w-64 h-64 bg-white/5 rounded-full transition-transform group-hover:scale-110 duration-700"></div>
 
-                        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                            {/* Text Inputs */}
-                            <input
-                                type="text"
-                                name="nom"
-                                required
-                                value={formData.nom}
-                                onChange={handleInputChange}
-                                placeholder="Nom et prénom"
-                                className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#F4B41A]/50 shadow-sm bg-white text-black placeholder-gray-500"
-                            />
-                            <input
-                                type="tel"
-                                name="telephone"
-                                required
-                                value={formData.telephone}
-                                onChange={handleInputChange}
-                                placeholder="Numéro de téléphone(whatsapp)"
-                                className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#F4B41A]/50 shadow-sm bg-white text-black placeholder-gray-500"
-                            />
-                            <input
-                                type="text"
-                                name="quartier"
-                                required
-                                value={formData.quartier}
-                                onChange={handleInputChange}
-                                placeholder="Quartier de résidence"
-                                className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#F4B41A]/50 shadow-sm bg-white text-black placeholder-gray-500"
-                            />
+                                <h3 className="text-xl md:text-2xl font-extrabold text-white mb-5 relative z-10">
+                                    Prêt à <span className="text-[#F4B41A]">démarrer</span> ?
+                                </h3>
 
-                            {/* Moto Section */}
-                            <div className="flex flex-col gap-4 pt-2">
-                                <div className="flex items-center justify-between text-[#143D59] font-semibold text-lg">
-                                    <span>Avez-vous une moto?</span>
-                                    <div className="flex items-center gap-6">
-                                        <button
-                                            type="button"
-                                            onClick={() => setFormData(p => ({ ...p, hasMoto: true }))}
-                                            className="flex items-center gap-2 cursor-pointer outline-none"
-                                        >
-                                            <div className={`w-5 h-5 rounded-full border-2 border-[#F4B41A] ${formData.hasMoto ? 'bg-[#F4B41A]' : 'bg-transparent'} flex items-center justify-center transition-colors`}>
-                                                {formData.hasMoto && <div className="w-2 h-2 rounded-full bg-black/60"></div>}
+                                <ul className="space-y-4 relative z-10">
+                                    {[
+                                        { title: "Permis de conduire", icon: "🪪", desc: "Valide pour la conduite de moto." },
+                                        { title: "Téléphone Android", icon: "📱", desc: "Pour recevoir vos commandes via l'app." },
+                                        { title: "Connaissance de Conakry", icon: "🗺️", desc: "Savoir se repérer dans les quartiers." },
+                                        { title: "Pièce d'identité", icon: "🆔", desc: "Carte d'identité ou passeport." },
+                                        { title: "Maitrise digitale", icon: "💬", desc: "Utiliser WhatsApp et Google Maps." }
+                                    ].map((item, index) => (
+                                        <li key={index} className="flex gap-3 items-center">
+                                            <div className="bg-white/10 w-9 h-9 rounded-xl flex items-center justify-center text-lg shrink-0 border border-white/10">
+                                                {item.icon}
                                             </div>
-                                            <span>Oui</span>
-                                        </button>
-                                        <button
-                                            type="button"
-                                            onClick={() => setFormData(p => ({ ...p, hasMoto: false }))}
-                                            className="flex items-center gap-2 cursor-pointer outline-none"
-                                        >
-                                            <div className={`w-5 h-5 rounded-full border-2 ${!formData.hasMoto ? 'border-[#F4B41A] bg-[#F4B41A]' : 'border-gray-400 bg-transparent'} flex items-center justify-center transition-colors`}>
-                                                {!formData.hasMoto && <div className="w-2 h-2 rounded-full bg-black/60"></div>}
+                                            <div className="flex flex-col">
+                                                <span className="text-white font-bold text-sm">{item.title}</span>
+                                                <span className="text-white/60 text-xs">{item.desc}</span>
                                             </div>
-                                            <span>Non</span>
-                                        </button>
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                <div className="mt-6 pt-5 border-t border-white/10 flex items-center gap-3">
+                                    <div className="w-12 h-12 rounded-full bg-[#F4B41A] flex items-center justify-center animate-pulse">
+                                        <CheckCircle2 className="w-6 h-6 text-[#143D59]" />
                                     </div>
-                                </div>
-
-                                {/* Permis Section */}
-                                <div className="flex items-center justify-between text-[#143D59] font-semibold text-lg">
-                                    <span>Avez vous un permis?</span>
-                                    <div className="flex items-center gap-6">
-                                        <button
-                                            type="button"
-                                            onClick={() => setFormData(p => ({ ...p, hasPermis: true }))}
-                                            className="flex items-center gap-2 cursor-pointer outline-none"
-                                        >
-                                            <div className={`w-5 h-5 rounded-full border-2 border-[#F4B41A] ${formData.hasPermis ? 'bg-[#F4B41A]' : 'bg-transparent'} flex items-center justify-center transition-colors`}>
-                                                {formData.hasPermis && <div className="w-2 h-2 rounded-full bg-black/60"></div>}
-                                            </div>
-                                            <span>Oui</span>
-                                        </button>
-                                        <button
-                                            type="button"
-                                            onClick={() => setFormData(p => ({ ...p, hasPermis: false }))}
-                                            className="flex items-center gap-2 cursor-pointer outline-none"
-                                        >
-                                            <div className={`w-5 h-5 rounded-full border-2 ${!formData.hasPermis ? 'border-[#F4B41A] bg-[#F4B41A]' : 'border-gray-400 bg-transparent'} flex items-center justify-center transition-colors`}>
-                                                {!formData.hasPermis && <div className="w-2 h-2 rounded-full bg-black/60"></div>}
-                                            </div>
-                                            <span>Non</span>
-                                        </button>
-                                    </div>
+                                    <p className="text-white/80 font-medium text-sm">
+                                        Si vous cochez tout, vous êtes <br /> <span className="text-[#F4B41A] font-bold">le partenaire idéal !</span>
+                                    </p>
                                 </div>
                             </div>
+                        </div>
 
-                            {/* Availability Toggle */}
-                            <div className="flex items-center justify-between pt-2">
-                                <span className="text-[#143D59] font-semibold text-lg">Disponibilité</span>
-                                <div className="flex items-center bg-gray-200/50 rounded-xl p-1 gap-1">
+                        {/* Right: Guided Form (Parcours Express) */}
+                        <div className="lg:col-span-7">
+                            <div className="bg-[#eff1f3]/50 rounded-[2rem] p-6 md:p-8 border border-gray-100 shadow-xl">
+                                <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                                    {/* Phase 1: Votre Profil */}
+                                    <div>
+                                        <div className="flex items-center gap-3 mb-5">
+                                            <div className="w-8 h-8 rounded-full bg-[#F4B41A] text-[#143D59] flex items-center justify-center font-black text-sm">1</div>
+                                            <h4 className="text-base font-extrabold text-[#143D59] uppercase tracking-wider">Votre Profil</h4>
+                                        </div>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            <div className="flex flex-col gap-2">
+                                                <label className="text-xs font-black text-[#143D59]/60 uppercase ml-4">Nom Complet</label>
+                                                <input
+                                                    type="text"
+                                                    name="nom"
+                                                    required
+                                                    value={formData.nom}
+                                                    onChange={handleInputChange}
+                                                    placeholder="Ex: Amadou Diallo"
+                                                    className="w-full p-3 rounded-xl border-2 border-transparent focus:border-[#F4B41A] focus:outline-none shadow-sm bg-white text-[#143D59] font-bold transition-all text-sm"
+                                                />
+                                            </div>
+                                            <div className="flex flex-col gap-2">
+                                                <label className="text-xs font-black text-[#143D59]/60 uppercase ml-4">Téléphone (WhatsApp)</label>
+                                                <input
+                                                    type="tel"
+                                                    name="telephone"
+                                                    required
+                                                    value={formData.telephone}
+                                                    onChange={handleInputChange}
+                                                    placeholder="6XX XX XX XX"
+                                                    className="w-full p-3 rounded-xl border-2 border-transparent focus:border-[#F4B41A] focus:outline-none shadow-sm bg-white text-[#143D59] font-bold transition-all text-sm"
+                                                />
+                                            </div>
+                                            <div className="md:col-span-2 flex flex-col gap-2">
+                                                <label className="text-xs font-black text-[#143D59]/60 uppercase ml-4">Quartier de résidence</label>
+                                                <input
+                                                    type="text"
+                                                    name="quartier"
+                                                    required
+                                                    value={formData.quartier}
+                                                    onChange={handleInputChange}
+                                                    placeholder="Ex: Ratoma, Conakry"
+                                                    className="w-full p-3 rounded-xl border-2 border-transparent focus:border-[#F4B41A] focus:outline-none shadow-sm bg-white text-[#143D59] font-bold transition-all text-sm"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Phase 2: Votre Dossier */}
+                                    <div>
+                                        <div className="flex items-center gap-3 mb-5">
+                                            <div className="w-8 h-8 rounded-full bg-[#F4B41A] text-[#143D59] flex items-center justify-center font-black text-sm">2</div>
+                                            <h4 className="text-base font-extrabold text-[#143D59] uppercase tracking-wider">Votre Dossier</h4>
+                                        </div>
+                                        <div className="flex flex-col gap-5">
+                                            {/* Questions interactives */}
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                <div className="flex flex-col gap-3">
+                                                    <span className="text-[#143D59] font-bold text-sm ml-2">Possédez-vous une moto ?</span>
+                                                    <div className="flex bg-white rounded-2xl p-1 gap-1 border-2 border-transparent shadow-sm">
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => setFormData(p => ({ ...p, hasMoto: true }))}
+                                                            className={`flex-1 py-2 rounded-xl font-black text-sm transition-all ${formData.hasMoto ? 'bg-[#143D59] text-white shadow-md' : 'text-[#143D59]/40 hover:bg-gray-50'}`}
+                                                        >
+                                                            OUI
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => setFormData(p => ({ ...p, hasMoto: false }))}
+                                                            className={`flex-1 py-2 rounded-xl font-black text-sm transition-all ${!formData.hasMoto ? 'bg-[#F4B41A] text-[#143D59] shadow-md' : 'text-[#143D59]/40 hover:bg-gray-50'}`}
+                                                        >
+                                                            NON
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div className="flex flex-col gap-3">
+                                                    <span className="text-[#143D59] font-bold text-sm ml-2">Avez-vous un permis ?</span>
+                                                    <div className="flex bg-white rounded-2xl p-1 gap-1 border-2 border-transparent shadow-sm">
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => setFormData(p => ({ ...p, hasPermis: true }))}
+                                                            className={`flex-1 py-2 rounded-xl font-black text-sm transition-all ${formData.hasPermis ? 'bg-[#143D59] text-white shadow-md' : 'text-[#143D59]/40 hover:bg-gray-50'}`}
+                                                        >
+                                                            OUI
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => setFormData(p => ({ ...p, hasPermis: false }))}
+                                                            className={`flex-1 py-2 rounded-xl font-black text-sm transition-all ${!formData.hasPermis ? 'bg-[#F4B41A] text-[#143D59] shadow-md' : 'text-[#143D59]/40 hover:bg-gray-50'}`}
+                                                        >
+                                                            NON
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Disponibilité */}
+                                            <div className="flex flex-col gap-3">
+                                                <span className="text-[#143D59] font-bold text-sm ml-2">Votre disponibilité</span>
+                                                <div className="flex bg-white rounded-2xl p-1 gap-1 border-2 border-transparent shadow-sm">
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setFormData(p => ({ ...p, disponibilite: "Temps plein" }))}
+                                                        className={`flex-1 py-2 rounded-xl font-black text-sm transition-all ${formData.disponibilite === "Temps plein" ? 'bg-[#F4B41A] text-[#143D59] shadow-md' : 'text-[#143D59]/40 hover:bg-gray-50'}`}
+                                                    >
+                                                        TEMPS PLEIN
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setFormData(p => ({ ...p, disponibilite: "Temps partiel" }))}
+                                                        className={`flex-1 py-2 rounded-xl font-black text-sm transition-all ${formData.disponibilite === "Temps partiel" ? 'bg-[#F4B41A] text-[#143D59] shadow-md' : 'text-[#143D59]/40 hover:bg-gray-50'}`}
+                                                    >
+                                                        TEMPS PARTIEL
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            {/* File Uploads stylized */}
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                <div className="flex flex-col gap-2">
+                                                    <label className="text-xs font-black text-[#143D59]/60 uppercase ml-2">CV (Optionnel)</label>
+                                                    <div
+                                                        onClick={() => cvInputRef.current?.click()}
+                                                        className="bg-white border-2 border-dashed border-gray-200 rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer hover:border-[#F4B41A] hover:bg-[#F4B41A]/5 transition-all group"
+                                                    >
+                                                        <input type="file" ref={cvInputRef} className="hidden" onChange={(e) => handleFileChange(e, 'cv')} accept=".pdf,.doc,.docx" />
+                                                        <span className={`text-sm font-bold truncate max-w-full ${files.cv ? 'text-[#143D59]' : 'text-gray-400'}`}>
+                                                            {files.cv ? files.cv.name : "Cliquez pour uploader"}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex flex-col gap-2">
+                                                    <label className="text-xs font-black text-[#143D59]/60 uppercase ml-2">Pièce d'identité (Recto)</label>
+                                                    <div
+                                                        onClick={() => idInputRef.current?.click()}
+                                                        className="bg-white border-2 border-dashed border-gray-200 rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer hover:border-[#F4B41A] hover:bg-[#F4B41A]/5 transition-all group"
+                                                    >
+                                                        <input type="file" ref={idInputRef} className="hidden" onChange={(e) => handleFileChange(e, 'id')} accept="image/*,.pdf" />
+                                                        <span className={`text-sm font-bold truncate max-w-full ${files.id ? 'text-[#143D59]' : 'text-gray-400'}`}>
+                                                            {files.id ? files.id.name : "Cliquez pour uploader"}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Final Submit */}
                                     <button
-                                        type="button"
-                                        onClick={() => setFormData(p => ({ ...p, disponibilite: "Temps plein" }))}
-                                        className={`text-sm md:text-base px-5 py-2 rounded-lg font-bold transition-all ${formData.disponibilite === "Temps plein" ? "bg-[#143D59] text-white" : "text-[#143D59] hover:bg-gray-300/30"}`}
+                                        type="submit"
+                                        disabled={isSubmitting}
+                                        className="w-full bg-[#F4B41A] text-[#143D59] font-black py-4 rounded-xl shadow-lg hover:bg-yellow-500 transition-all text-base uppercase tracking-widest flex items-center justify-center gap-3 disabled:opacity-70 group"
                                     >
-                                        Temps plein
+                                        {isSubmitting ? (
+                                            <>
+                                                <Loader2 className="w-6 h-6 animate-spin" />
+                                                Validation express...
+                                            </>
+                                        ) : (
+                                            <>
+                                                Envoyer ma candidature
+                                                <CheckCircle2 className="w-6 h-6 text-[#143D59] group-hover:scale-110 transition-transform" />
+                                            </>
+                                        )}
                                     </button>
-                                    <button
-                                        type="button"
-                                        onClick={() => setFormData(p => ({ ...p, disponibilite: "Temps partiel" }))}
-                                        className={`text-sm md:text-base px-5 py-2 rounded-lg font-bold transition-all ${formData.disponibilite === "Temps partiel" ? "bg-[#F4B41A] text-[#143D59]" : "text-[#143D59] hover:bg-gray-300/30"}`}
-                                    >
-                                        Temps partiel
-                                    </button>
-                                </div>
+                                </form>
                             </div>
-
-                            {/* File Uploads */}
-                            <div className="flex flex-col gap-4 pt-2">
-                                <input
-                                    type="file"
-                                    ref={cvInputRef}
-                                    className="hidden"
-                                    onChange={(e) => handleFileChange(e, 'cv')}
-                                    accept=".pdf,.doc,.docx"
-                                />
-                                <div
-                                    onClick={() => cvInputRef.current?.click()}
-                                    className="flex items-center rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-white cursor-pointer group hover:border-[#F4B41A]/50 transition-colors"
-                                >
-                                    <div className="bg-[#143D59] text-white px-5 py-4 font-bold text-sm md:text-base whitespace-nowrap group-hover:bg-[#1c4d6f] transition-colors">
-                                        Choisir un fichier
-                                    </div>
-                                    <span className={`px-5 text-sm md:text-base italic truncate ${files.cv ? 'text-[#143D59] font-medium' : 'text-gray-400'}`}>
-                                        {files.cv ? files.cv.name : "Aucun fichier choisi (CV)"}
-                                    </span>
-                                </div>
-
-                                <input
-                                    type="file"
-                                    ref={idInputRef}
-                                    className="hidden"
-                                    onChange={(e) => handleFileChange(e, 'id')}
-                                    accept="image/*,.pdf"
-                                />
-                                <div
-                                    onClick={() => idInputRef.current?.click()}
-                                    className="flex items-center rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-white cursor-pointer group hover:border-[#F4B41A]/50 transition-colors"
-                                >
-                                    <div className="bg-[#F4B41A] text-[#143D59] px-5 py-4 font-bold text-sm md:text-base whitespace-nowrap group-hover:bg-yellow-500 transition-colors">
-                                        Choisir un fichier
-                                    </div>
-                                    <span className={`px-5 text-sm md:text-base italic truncate ${files.id ? 'text-[#143D59] font-medium' : 'text-gray-400'}`}>
-                                        {files.id ? files.id.name : "Aucun fichier choisi (ID)"}
-                                    </span>
-                                </div>
-                            </div>
-
-                            {/* Submit Button */}
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="w-full bg-[#F4B41A] text-[#143D59] font-extrabold py-5 rounded-xl shadow-lg hover:bg-yellow-500 transition-all text-xl md:text-2xl mt-6 uppercase tracking-wider flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
-                            >
-                                {isSubmitting ? (
-                                    <>
-                                        <Loader2 className="w-6 h-6 animate-spin" />
-                                        Envoi en cours...
-                                    </>
-                                ) : (
-                                    "Envoyez ma candidature"
-                                )}
-                            </button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </section>
