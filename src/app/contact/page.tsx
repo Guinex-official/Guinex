@@ -171,24 +171,24 @@ export default function ContactPage() {
                             <div className="bg-[#143D59] p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
                                 <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/5 rounded-full blur-3xl group-hover:bg-white/10 transition-colors"></div>
                                 <h3 className="text-2xl font-bold text-white mb-8 relative z-10 text-center lg:text-left">Pourquoi nous choisir ?</h3>
-                                <div className="space-y-6 relative z-10">
-                                    <div className="flex items-center justify-center lg:justify-start space-x-4">
-                                        <div className="bg-[#F4B41A] p-2 rounded-lg flex-shrink-0">
+                                <div className="max-w-max mx-auto lg:mx-0 space-y-6 relative z-10">
+                                    <div className="flex items-center space-x-4 group/item">
+                                        <div className="w-10 h-10 bg-[#F4B41A] rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-yellow-500/20 group-hover/item:scale-110 transition-transform">
                                             <Clock className="w-5 h-5 text-[#143D59]" />
                                         </div>
-                                        <span className="text-white/90 text-lg">Réponse ultra-rapide</span>
+                                        <span className="text-white text-lg font-semibold tracking-wide">Réponse ultra-rapide</span>
                                     </div>
-                                    <div className="flex items-center justify-center lg:justify-start space-x-4">
-                                        <div className="bg-[#F4B41A] p-2 rounded-lg flex-shrink-0">
+                                    <div className="flex items-center space-x-4 group/item">
+                                        <div className="w-10 h-10 bg-[#F4B41A] rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-yellow-500/20 group-hover/item:scale-110 transition-transform">
                                             <ShieldCheck className="w-5 h-5 text-[#143D59]" />
                                         </div>
-                                        <span className="text-white/90 text-lg">Service 100% sécurisé</span>
+                                        <span className="text-white text-lg font-semibold tracking-wide">Service 100% sécurisé</span>
                                     </div>
-                                    <div className="flex items-center justify-center lg:justify-start space-x-4">
-                                        <div className="bg-[#F4B41A] p-2 rounded-lg flex-shrink-0">
+                                    <div className="flex items-center space-x-4 group/item">
+                                        <div className="w-10 h-10 bg-[#F4B41A] rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-yellow-500/20 group-hover/item:scale-110 transition-transform">
                                             <MessageSquare className="w-5 h-5 text-[#143D59]" />
                                         </div>
-                                        <span className="text-white/90 text-lg">Support personnalisé</span>
+                                        <span className="text-white text-lg font-semibold tracking-wide">Support personnalisé</span>
                                     </div>
                                 </div>
                             </div>

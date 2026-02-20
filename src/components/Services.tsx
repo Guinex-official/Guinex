@@ -13,62 +13,62 @@ export default function Services() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 max-w-5xl mx-auto" suppressHydrationWarning>
                     {/* Card 1: Entreprises */}
-                    <div className="flex flex-col">
+                    <div className="flex flex-col h-full bg-white rounded-xl shadow-xl overflow-hidden transform transition-all hover:scale-[1.01] duration-300">
                         {/* Card Header */}
-                        <div className="bg-[#D1D9E1] py-3 px-6 text-center flex items-center justify-center space-x-3 rounded-t-2xl shadow-md w-full z-10 relative">
-                            <Image src="/images/icons/entrepriseicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" priority />
-                            <h3 className="text-lg md:text-xl font-bold text-[#143D59]">
+                        <div className="bg-[#143D59] py-4 px-6 text-center flex items-center justify-center space-x-3 w-full z-10 relative">
+                            <Image src="/images/icons/entrepriseicon.png" width={24} height={24} alt="icon" className="w-5 h-5 md:w-6 md:h-6 object-contain" priority />
+                            <h3 className="text-sm md:text-base font-extrabold text-[#F4B41A] uppercase tracking-wide">
                                 Pour les entreprises
                             </h3>
                         </div>
                         {/* Card Body */}
-                        <div className="bg-[#eff1f3] rounded-b-2xl shadow-sm hover:shadow-md transition-shadow p-8 flex-grow border border-gray-100 border-t-0 w-full">
+                        <div className="bg-[#eff1f3] p-6 md:p-10 flex-grow w-full border border-gray-100 border-t-0">
                             <ul className="space-y-6">
-                                <li className="flex items-center justify-center md:justify-start text-[#143D59] text-base md:text-lg">
-                                    <div className="mr-4 flex-shrink-0">
-                                        <Image src="/images/icons/repasicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" priority />
+                                <li className="flex items-center justify-center md:justify-start text-[#143D59] text-base md:text-lg font-medium">
+                                    <div className="mr-4 flex-shrink-0 bg-white p-2 rounded-lg shadow-sm">
+                                        <Image src="/images/icons/repasicon.png" width={24} height={24} alt="icon" className="w-5 h-5 md:w-6 md:h-6 object-contain" priority />
                                     </div>
-                                    <span>Livraison de repas pour les équipes</span>
+                                    <span className="leading-tight">Livraison de repas pour les équipes</span>
                                 </li>
-                                <li className="flex items-center text-[#143D59] text-base md:text-lg">
-                                    <div className="mr-4 flex-shrink-0">
-                                        <Image src="/images/icons/serviceicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" priority />
+                                <li className="flex items-center justify-center md:justify-start text-[#143D59] text-base md:text-lg font-medium">
+                                    <div className="mr-4 flex-shrink-0 bg-white p-2 rounded-lg shadow-sm">
+                                        <Image src="/images/icons/serviceicon.png" width={24} height={24} alt="icon" className="w-5 h-5 md:w-6 md:h-6 object-contain" priority />
                                     </div>
-                                    <span>Service coursier</span>
+                                    <span className="leading-tight">Service coursier</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
                     {/* Card 2: Particuliers */}
-                    <div className="flex flex-col">
+                    <div className="flex flex-col h-full bg-white rounded-xl shadow-xl overflow-hidden transform transition-all hover:scale-[1.01] duration-300">
                         {/* Card Header */}
-                        <div className="bg-[#D1D9E1] py-3 px-6 text-center flex items-center justify-center space-x-3 rounded-t-2xl shadow-md w-full z-10 relative">
-                            <Image src="/images/icons/manicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" priority />
-                            <h3 className="text-lg md:text-xl font-bold text-[#143D59]">
+                        <div className="bg-[#F4B41A] py-4 px-6 text-center flex items-center justify-center space-x-3 w-full z-10 relative">
+                            <Image src="/images/icons/manicon.png" width={24} height={24} alt="icon" className="w-5 h-5 md:w-6 md:h-6 object-contain" priority />
+                            <h3 className="text-sm md:text-base font-extrabold text-[#143D59] uppercase tracking-wide">
                                 Pour les particuliers
                             </h3>
                         </div>
                         {/* Card Body */}
-                        <div className="bg-[#eff1f3] rounded-b-2xl shadow-sm hover:shadow-md transition-shadow p-8 flex-grow border border-gray-100 border-t-0 w-full">
+                        <div className="bg-[#eff1f3] p-6 md:p-10 flex-grow w-full border border-gray-100 border-t-0">
                             <ul className="space-y-6">
-                                <li className="flex items-center justify-center md:justify-start text-[#143D59] text-base md:text-lg">
-                                    <div className="mr-4 flex-shrink-0">
-                                        <Image src="/images/icons/repasicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" priority />
+                                <li className="flex items-center justify-center md:justify-start text-[#143D59] text-base md:text-lg font-medium">
+                                    <div className="mr-4 flex-shrink-0 bg-white p-2 rounded-lg shadow-sm">
+                                        <Image src="/images/icons/repasicon.png" width={24} height={24} alt="icon" className="w-5 h-5 md:w-6 md:h-6 object-contain" priority />
                                     </div>
-                                    <span>Livraison de repas</span>
+                                    <span className="leading-tight">Livraison de repas</span>
                                 </li>
-                                <li className="flex items-center justify-center md:justify-start text-[#143D59] text-base md:text-lg">
-                                    <div className="mr-4 flex-shrink-0">
-                                        <Image src="/images/icons/colisicon.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" priority />
+                                <li className="flex items-center justify-center md:justify-start text-[#143D59] text-base md:text-lg font-medium">
+                                    <div className="mr-4 flex-shrink-0 bg-white p-2 rounded-lg shadow-sm">
+                                        <Image src="/images/icons/colisicon.png" width={24} height={24} alt="icon" className="w-5 h-5 md:w-6 md:h-6 object-contain" priority />
                                     </div>
-                                    <span>Livraison de colis</span>
+                                    <span className="leading-tight">Livraison de colis</span>
                                 </li>
-                                <li className="flex items-center justify-center md:justify-start text-[#143D59] text-base md:text-lg">
-                                    <div className="mr-4 flex-shrink-0">
-                                        <Image src="/images/icons/document.png" width={24} height={24} alt="icon" className="w-6 h-6 object-contain" priority />
+                                <li className="flex items-center justify-center md:justify-start text-[#143D59] text-base md:text-lg font-medium">
+                                    <div className="mr-4 flex-shrink-0 bg-white p-2 rounded-lg shadow-sm">
+                                        <Image src="/images/icons/document.png" width={24} height={24} alt="icon" className="w-5 h-5 md:w-6 md:h-6 object-contain" priority />
                                     </div>
-                                    <span>Courses et documents</span>
+                                    <span className="leading-tight">Courses et documents</span>
                                 </li>
                             </ul>
                         </div>
