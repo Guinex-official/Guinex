@@ -129,7 +129,7 @@ export default function LivreursPage() {
                         priority
                         sizes="100vw"
                     />
-                    <div className="absolute inset-0 bg-white/50"></div>
+                    <div className="absolute inset-0 bg-[#143D59]/60 backdrop-blur-sm"></div>
                 </div>
 
                 <div className="relative z-10 w-full max-w-6xl px-4 flex flex-col items-center">
@@ -137,13 +137,13 @@ export default function LivreursPage() {
                     <h1
                         className="text-[13vw] sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white text-center leading-[1.1] mb-8 px-2"
                         style={{
-                            filter: 'drop-shadow(1px 1px 0 #F4B41A) drop-shadow(-1px -1px 0 #F4B41A) drop-shadow(1px -1px 0 #F4B41A) drop-shadow(-1px 1px 0 #F4B41A)'
+                            textShadow: '0 4px 20px rgba(0,0,0,0.5)'
                         }}
                     >
                         Devenez livreur Guinex
                     </h1>
 
-                    <p className="text-[#143D59] text-center text-lg md:text-2xl font-bold max-w-2xl mb-12 px-4 leading-relaxed tracking-tight">
+                    <p className="text-white text-center text-lg md:text-2xl font-bold max-w-2xl mb-12 px-4 leading-relaxed tracking-tight">
                         Rejoignez une équipe professionnelle et participez au développement d'un service de livraison moderne en Guinée.
                     </p>
 

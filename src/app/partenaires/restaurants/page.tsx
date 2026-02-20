@@ -26,13 +26,13 @@ export default function RestaurantsPage() {
                         priority
                         sizes="100vw"
                     />
-                    <div className="absolute inset-0 bg-white/65"></div>
+                    <div className="absolute inset-0 bg-[#143D59]/60 backdrop-blur-sm"></div>
                 </div>
 
                 <div className="relative z-10 w-full max-w-6xl px-4 flex flex-col items-center">
 
                     {/* Hero Title */}
-                    <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-extrabold text-[#143D59] text-center leading-tight mb-8 md:mb-20 lg:mb-24 max-w-4xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.15)] px-2">
+                    <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-extrabold text-white text-center leading-tight mb-8 md:mb-20 lg:mb-24 max-w-4xl drop-shadow-[0_4px_10px_rgba(0,0,0,0.3)] px-2">
                         Optimisez la livraison de vos repas et <br className="hidden md:block" />
                         développez vos ventes avec Guinex
                     </h1>

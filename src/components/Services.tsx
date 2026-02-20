@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Services() {
     return (
-        <section id="services" className="pt-6 pb-24 md:py-32 bg-white relative overflow-hidden" suppressHydrationWarning>
+        <section id="services" className="pt-10 pb-24 md:py-32 bg-white relative overflow-hidden" suppressHydrationWarning>
             <div className="container mx-auto max-w-7xl px-4 relative z-10" suppressHydrationWarning>
                 <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20" suppressHydrationWarning>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#143D59] mb-8">

@@ -24,16 +24,16 @@ export default function ServicesPage() {
                         quality={100}
                     />
                     {/* Gradient only for Desktop or bottom of image? */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/50 to-white/95 md:from-white md:via-white/50 md:to-white/95"></div>
+                    <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] md:bg-[#143D59]/60 md:backdrop-blur-sm"></div>
                 </div>
 
                 {/* Content Section */}
                 <div className="relative w-full bg-transparent md:bg-transparent md:absolute md:inset-0 md:flex md:flex-col md:items-center md:justify-center z-10 pt-16 md:pt-0 pb-20 md:pb-0">
                     <div className="container mx-auto max-w-7xl px-4 text-center">
                         <h1
-                            className="text-[40px] md:text-6xl font-bold text-[#143D59] mb-16 md:pt-10"
+                            className="text-[40px] md:text-6xl font-bold text-white mb-16 md:pt-10"
                             style={{
-                                textShadow: '2px 0 0 #F4B41A, -2px 0 0 #F4B41A, 0 2px 0 #F4B41A, 0 -2px 0 #F4B41A, 1px 1px 0 #F4B41A, -1px -1px 0 #F4B41A, 1px -1px 0 #F4B41A, -1px 1px 0 #F4B41A, 0 10px 15px rgba(0,0,0,0.2)'
+                                textShadow: '0 4px 20px rgba(0,0,0,0.5)'
                             }}
                         >
                             Nos services
@@ -87,18 +87,18 @@ export default function ServicesPage() {
 
                         {/* Pourquoi choisir Guinex */}
                         <div className="mt-8 md:mt-12 max-w-5xl mx-auto px-4 relative z-20 pb-0">
-                            <h2 className="text-[28px] sm:text-[36px] md:text-[48px] font-bold text-[#143D59] mb-6 md:mb-10">
+                            <h2 className="text-[28px] sm:text-[36px] md:text-[48px] font-bold text-white mb-6 md:mb-10">
                                 Pourquoi choisir Guinex ?
                             </h2>
 
                             <div className="max-w-4xl mx-auto space-y-1 md:space-y-2 bg-white/40 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-6 md:p-0 rounded-3xl transition-all">
-                                <p className="text-lg md:text-2xl text-[#143D59] font-medium leading-tight">
+                                <p className="text-lg md:text-2xl text-white font-medium leading-tight">
                                     Rapidité, professionnalisme et fiabilité pour vos livraisons à Conakry.
                                 </p>
-                                <p className="text-lg md:text-2xl text-[#143D59] font-medium leading-tight">
+                                <p className="text-lg md:text-2xl text-white font-medium leading-tight">
                                     Un service adapté aux entreprises comme aux particuliers, avec suivi des envois et gain de temps pour vos équipes.
                                 </p>
-                                <p className="text-xl md:text-[28px] font-bold text-[#143D59]">
+                                <p className="text-xl md:text-[28px] font-bold text-[#F4B41A]">
                                     Guinex, une solution locale pensée pour les réalités du terrain.
                                 </p>
                             </div>

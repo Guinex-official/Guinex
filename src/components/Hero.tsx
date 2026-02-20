@@ -50,7 +50,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative w-full aspect-[3.3/1] flex items-center overflow-hidden" suppressHydrationWarning>
+        <section className="relative w-full min-h-[80vh] md:min-h-screen lg:min-h-0 lg:h-auto lg:aspect-[3.3/1] flex items-center overflow-hidden" suppressHydrationWarning>
             {/* Background Image Optimized */}
             <div className="absolute inset-0 z-0" suppressHydrationWarning>
                 <Image
@@ -65,9 +65,9 @@ export default function Hero() {
             </div>
 
             {/* Content */}
-            <div className="container mx-auto max-w-7xl px-4 z-10 relative h-full flex items-center pt-0" suppressHydrationWarning>
-                <div className="max-w-3xl text-white mb-0.5 md:mb-8 md:-mt-12" suppressHydrationWarning>
-                    <h1 className="text-[10px] sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight mb-0.5 sm:mb-2 md:mb-4 tracking-tight drop-shadow-lg">
+            <div className="container mx-auto max-w-7xl px-4 z-10 relative h-full flex items-center" suppressHydrationWarning>
+                <div className="max-w-3xl text-white mb-2 -mt-44 md:mb-8 md:-mt-12" suppressHydrationWarning>
+                    <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 tracking-tight drop-shadow-lg">
                         <span className="whitespace-nowrap inline-block">
                             <span className="text-white">La livraison </span>
                             <span className="text-[#F4B41A]">simple, rapide</span>
@@ -76,7 +76,7 @@ export default function Hero() {
                         <span className="inline whitespace-nowrap text-white">et professionnelle <span className="font-extralight text-white">en Guinée</span></span>
                     </h1>
 
-                    <div className="flex flex-wrap items-center gap-x-1 text-[8px] sm:text-base md:text-xl lg:text-2xl mb-1 sm:mb-3 md:mb-6 font-light max-w-xl" suppressHydrationWarning>
+                    <div className="flex flex-wrap items-center gap-x-3 text-lg sm:text-xl md:text-xl lg:text-2xl mb-4 md:mb-6 font-light max-w-xl" suppressHydrationWarning>
                         {services.map((service, index) => (
                             <div key={service} className="flex items-center">
                                 <span
@@ -109,7 +109,7 @@ export default function Hero() {
 
                     <button
                         onClick={() => setIsModalOpen(true)}
-                        className="inline-block bg-[#F4B41A] text-[#143D59] font-bold py-0.5 px-3 sm:py-2 sm:px-6 md:py-3 md:px-8 rounded-full shadow-xl hover:bg-yellow-400 transition-all transform hover:-translate-y-1 active:scale-95 text-[8px] sm:text-sm md:text-base"
+                        className="inline-block bg-[#F4B41A] text-[#143D59] font-bold py-2.5 px-8 md:py-3 md:px-8 rounded-full shadow-xl hover:bg-yellow-400 transition-all transform hover:-translate-y-1 active:scale-95 text-sm md:text-base"
                     >
                         Nous contacter
                     </button>

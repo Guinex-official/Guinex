@@ -41,3 +41,62 @@ body {
     opacity: 0.3;
     margin: 0 4px;
 }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes perspectiveRevealRight {
+    from {
+        opacity: 0;
+        transform: perspective(1000px) rotateY(-15deg) translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: perspective(1000px) rotateY(0deg) translateX(0);
+    }
+}
+
+@keyframes perspectiveRevealLeft {
+    from {
+        opacity: 0;
+        transform: perspective(1000px) rotateY(15deg) translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: perspective(1000px) rotateY(0deg) translateX(0);
+    }
+}
+
+.animate-reveal-right {
+    animation: perspectiveRevealRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+.animate-reveal-left {
+    animation: perspectiveRevealLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+.shadow-mission-glow:hover {
+    box-shadow: 0 20px 50px -12px rgba(20, 61, 89, 0.4);
+}
+
+.shadow-vision-glow:hover {
+    box-shadow: 0 20px 50px -12px rgba(244, 180, 26, 0.4);
+}
