@@ -106,11 +106,24 @@ export default function AboutPage() {
                     </div>
                 </div>
 
-                {/* Footer Text */}
-                <div className="max-w-4xl mx-auto text-center px-4 mb-8 md:mb-12">
-                    <p className="text-xl md:text-3xl text-[#143D59] font-black leading-tight">
-                        Guinex développe progressivement sa plateforme digitale afin de simplifier les commandes et le suivi des livraisons pour ses partenaires et clients.
-                    </p>
+                {/* Innovation Callout Section */}
+                <div className="max-w-4xl mx-auto px-4 mb-16 md:mb-24 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+                    <div className="bg-[#143D59]/5 border-l-8 border-[#F4B41A] rounded-2xl p-8 md:p-12 shadow-sm relative overflow-hidden group hover:bg-[#143D59]/10 transition-all duration-500">
+                        {/* Decorative Background Icon */}
+                        <div className="absolute right-[-20px] bottom-[-20px] text-[#143D59]/5 transform -rotate-12 group-hover:scale-110 transition-transform duration-700">
+                            <Check size={200} />
+                        </div>
+
+                        <div className="relative z-10">
+                            <p className="text-xl md:text-2xl text-[#143D59] font-bold leading-relaxed">
+                                Guinex développe progressivement sa <span className="text-[#F4B41A]">plateforme digitale</span> afin de simplifier les commandes et le suivi des livraisons pour ses partenaires et clients.
+                            </p>
+                            <div className="mt-6 flex items-center space-x-2 text-[#143D59]/60 font-semibold uppercase tracking-widest text-xs md:text-sm">
+                                <div className="h-px w-8 bg-[#143D59]/20"></div>
+                                <span>L'innovation au service de la Guinée</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
