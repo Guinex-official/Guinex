@@ -4,6 +4,9 @@ import { transporter } from '@/lib/mail';
 
 export async function POST(req: Request) {
     try {
+        console.log('API Livreur call started');
+        console.log('SMTP_USER defined:', !!process.env.SMTP_USER);
+
         const formData = await req.formData();
         const nom = formData.get('nom') as string;
         const telephone = formData.get('telephone') as string;
@@ -64,10 +67,14 @@ export async function POST(req: Request) {
         await transporter.sendMail(mailOptions);
 
         return NextResponse.json({ success: true, message: 'Candidature envoyée avec succès' });
-    } catch (error) {
+    } catch (error: any) {
         console.error('Erreur lors de l\'envoi de la candidature:', error);
         return NextResponse.json(
-            { success: false, message: 'Erreur lors de l\'envoi de la candidature' },
+            {
+                success: false,
+                message: 'Erreur lors de l\'envoi de la candidature',
+                error: error.message
+            },
             { status: 500 }
         );
     }

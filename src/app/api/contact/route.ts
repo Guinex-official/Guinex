@@ -4,6 +4,10 @@ import { transporter } from '@/lib/mail';
 
 export async function POST(req: Request) {
     try {
+        console.log('API Contact call started');
+        console.log('SMTP_USER defined:', !!process.env.SMTP_USER);
+        console.log('RECIP_EMAIL defined:', !!process.env.RECIP_EMAIL);
+
         const data = await req.json();
         const { nom, telephone, email, message } = data;
 
@@ -37,10 +41,14 @@ export async function POST(req: Request) {
         await transporter.sendMail(mailOptions);
 
         return NextResponse.json({ success: true, message: 'Message envoyé avec succès' });
-    } catch (error) {
+    } catch (error: any) {
         console.error('Erreur lors de l\'envoi de l\'email:', error);
         return NextResponse.json(
-            { success: false, message: 'Erreur lors de l\'envoi du message' },
+            {
+                success: false,
+                message: 'Erreur lors de l\'envoi du message',
+                error: error.message
+            },
             { status: 500 }
         );
     }

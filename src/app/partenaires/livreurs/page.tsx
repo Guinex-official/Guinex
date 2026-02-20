@@ -63,18 +63,10 @@ export default function LivreursPage() {
 
             if (response.ok) {
                 setIsSuccess(true);
-                setFormData({
-                    nom: "",
-                    telephone: "",
-                    quartier: "",
-                    hasMoto: true,
-                    hasPermis: true,
-                    disponibilite: "Temps plein",
-                });
-                setFiles({ cv: null, id: null });
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // ... (reset state logic)
             } else {
-                alert("Une erreur est survenue lors de l'envoi de la candidature.");
+                const errorData = await response.json();
+                alert(`Erreur: ${errorData.message || "Une erreur est survenue"} (${errorData.error || "détail inconnu"})`);
             }
         } catch (error) {
             console.error("Erreur:", error);

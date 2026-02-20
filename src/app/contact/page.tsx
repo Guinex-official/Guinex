@@ -36,17 +36,16 @@ export default function ContactPage() {
 
             if (response.ok) {
                 setIsSuccess(true);
-                // On garde le nom pour le message de succès avant de reset
-                const nomClient = formData.nom;
                 setFormData({
-                    nom: nomClient, // On garde le nom temporairement pour l'affichage du succès
+                    nom: "",
                     telephone: "",
                     email: "",
                     message: ""
                 });
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
-                alert("Une erreur est survenue lors de l'envoi du message.");
+                const errorData = await response.json();
+                alert(`Erreur: ${errorData.message || "Une erreur est survenue"} (${errorData.error || "détail inconnu"})`);
             }
         } catch (error) {
             console.error("Erreur:", error);
