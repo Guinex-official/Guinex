@@ -91,7 +91,7 @@ export default function Header() {
                 </div>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex flex-1 justify-center space-x-12 lg:space-x-16 items-center font-bold text-lg">
+                <nav className="hidden md:flex flex-1 justify-center space-x-12 lg:space-x-16 items-center font-bold text-lg" suppressHydrationWarning>
                     <Link
                         href="/"
                         className={`transition-colors ${isActive("/") ? "text-[#F4B41A]" : "text-[#143D59] hover:text-[#F4B41A]"}`}
@@ -119,7 +119,7 @@ export default function Header() {
                         </button>
 
                         {isPartnersOpen && (
-                            <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-xl py-2 z-50 animate-reveal-subtle">
+                            <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-xl py-2 z-50 animate-reveal-subtle" suppressHydrationWarning>
                                 {partnerLinks.map((link) => (
                                     <Link
                                         key={link.name}

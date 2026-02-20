@@ -63,9 +63,9 @@ export default function Hero() {
                     style={{ objectFit: 'cover' }}
                 />
                 {/* Premium Gradient Overlay: Enhanced for Mobile Readability */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[#143D59]/70 via-[#143D59]/40 to-[#143D59]/90 lg:bg-black/20"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-[#143D59]/70 via-[#143D59]/40 to-[#143D59]/90 lg:bg-black/20" suppressHydrationWarning></div>
                 {/* Subtle Blur for Depth on Mobile */}
-                <div className="absolute inset-0 backdrop-blur-[1px] lg:backdrop-blur-0"></div>
+                <div className="absolute inset-0 backdrop-blur-[1px] lg:backdrop-blur-0" suppressHydrationWarning></div>
             </div>
 
             {/* Content */}
@@ -109,8 +109,8 @@ export default function Hero() {
                         ))}
                     </div>
 
-                    <div className="relative group">
-                        <div className="absolute -inset-1 bg-[#F4B41A] rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+                    <div className="relative group" suppressHydrationWarning>
+                        <div className="absolute -inset-1 bg-[#F4B41A] rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300" suppressHydrationWarning></div>
                         <button
                             onClick={() => setIsModalOpen(true)}
                             className="relative bg-[#F4B41A] text-[#143D59] font-extrabold py-3.5 px-10 md:py-4 md:px-12 rounded-full shadow-2xl hover:bg-[#F4B41A] hover:scale-105 transition-all active:scale-95 text-base md:text-lg tracking-wider uppercase"

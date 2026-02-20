@@ -16,7 +16,7 @@ export default function Footer() {
                             className="object-contain w-[140px] md:w-[160px]"
                         />
                     </div>
-                    <div className="space-y-3 text-base md:text-lg font-medium w-full flex flex-col items-center md:items-start">
+                    <div className="space-y-3 text-base md:text-lg font-medium w-full flex flex-col items-center md:items-start" suppressHydrationWarning>
                         <Link href="https://www.facebook.com/profile.php?id=61586797093987&mibextid=wwXIfr" target="_blank" className="block hover:text-[#F4B41A] transition-colors underline decoration-1 underline-offset-4">• Facebook</Link>
                         <Link href="https://www.instagram.com/guinex_livraison?igsh=Z2ZvY3d2dXpjZDhl&utm_source=qr" target="_blank" className="block hover:text-[#F4B41A] transition-colors underline decoration-1 underline-offset-4">• Instagram</Link>
                         <Link href="https://www.linkedin.com/company/guinex-livraison-logistique/about/" target="_blank" className="block hover:text-[#F4B41A] transition-colors underline decoration-1 underline-offset-4">• LinkedIn</Link>
@@ -47,7 +47,7 @@ export default function Footer() {
                 </div>
                 {/* Right Column: Google Play Section */}
                 <div className="md:w-fit md:mt-auto md:ml-auto flex flex-col items-center md:items-end w-full md:w-auto mt-10 md:mb-4 md:translate-y-8" suppressHydrationWarning>
-                    <div className="flex flex-col items-center md:items-end mb-6 font-bold tracking-normal leading-tight text-xl md:text-2xl">
+                    <div className="flex flex-col items-center md:items-end mb-6 font-bold tracking-normal leading-tight text-xl md:text-2xl" suppressHydrationWarning>
                         <span className="text-[#F4B41A]">Application</span>
                         <span className="text-[#143D59]">bientôt</span>
                         <span className="text-[#F4B41A]">disponible</span>
@@ -83,8 +83,8 @@ export default function Footer() {
 
             {/* Copyright Section */}
             <div className="container mx-auto max-w-7xl px-4 relative z-10" suppressHydrationWarning>
-                <div className="border-t border-white/20 pt-8 pb-12 text-center">
-                    <div className="flex flex-col items-center">
+                <div className="border-t border-white/20 pt-8 pb-12 text-center" suppressHydrationWarning>
+                    <div className="flex flex-col items-center" suppressHydrationWarning>
                         <p className="text-sm md:text-base text-white/70 font-medium tracking-wide">
                             © 2026 <span className="text-[#F4B41A]">Guinex Livraison Express</span>. Tous droits réservés.
                         </p>
@@ -92,7 +92,7 @@ export default function Footer() {
                 </div>
             </div>
 
-            <div className="absolute bottom-0 right-0 w-full md:w-1/2 h-full pointer-events-none opacity-20 md:opacity-100">
+            <div className="absolute bottom-0 right-0 w-full md:w-1/2 h-full pointer-events-none opacity-20 md:opacity-100" suppressHydrationWarning>
                 <Image
                     src="/images/shared/backgroundfooter.png"
                     alt="Support"
