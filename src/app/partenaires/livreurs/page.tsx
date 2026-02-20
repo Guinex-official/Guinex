@@ -135,7 +135,7 @@ export default function LivreursPage() {
                 <div className="relative z-10 w-full max-w-6xl px-4 flex flex-col items-center">
                     {/* Hero Title with white outline/glow for readability */}
                     <h1
-                        className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold text-white text-center leading-tight mb-8 px-2"
+                        className="text-4xl sm:text-5xl md:text-5xl lg:text-7xl font-extrabold text-white text-center leading-tight mb-8 px-2"
                         style={{
                             filter: 'drop-shadow(1px 1px 0 #F4B41A) drop-shadow(-1px -1px 0 #F4B41A) drop-shadow(1px -1px 0 #F4B41A) drop-shadow(-1px 1px 0 #F4B41A)'
                         }}
