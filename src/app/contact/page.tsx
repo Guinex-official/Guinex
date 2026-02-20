@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MapPin, Phone, Loader2, PartyPopper } from "lucide-react";
+import Image from "next/image";
+import { Mail, MapPin, Phone, Loader2, PartyPopper, MessageSquare, Clock, ShieldCheck } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -35,8 +36,10 @@ export default function ContactPage() {
 
             if (response.ok) {
                 setIsSuccess(true);
+                // On garde le nom pour le message de succès avant de reset
+                const nomClient = formData.nom;
                 setFormData({
-                    nom: "",
+                    nom: nomClient, // On garde le nom temporairement pour l'affichage du succès
                     telephone: "",
                     email: "",
                     message: ""
@@ -57,20 +60,20 @@ export default function ContactPage() {
         return (
             <main className="min-h-screen bg-white flex flex-col">
                 <Header />
-                <section className="flex-grow flex flex-col items-center justify-center py-24 px-4 text-center">
-                    <div className="bg-[#F1F4F7] p-12 md:p-20 rounded-3xl shadow-xl flex flex-col items-center max-w-2xl w-full border border-gray-100">
-                        <div className="bg-[#F4B41A] p-6 rounded-full mb-8 shadow-lg shadow-yellow-100 animate-bounce">
+                <section className="flex-grow flex flex-col items-center justify-center py-24 px-4 text-center bg-gray-50">
+                    <div className="bg-white p-12 md:p-20 rounded-[2rem] shadow-2xl flex flex-col items-center max-w-2xl w-full border border-gray-100 animate-fade-in-up">
+                        <div className="bg-[#F4B41A] p-6 rounded-full mb-8 shadow-xl shadow-yellow-100/50 animate-bounce">
                             <PartyPopper className="w-12 h-12 text-[#143D59]" />
                         </div>
-                        <h1 className="text-3xl md:text-5xl font-extrabold text-[#143D59] mb-6">
-                            Message envoyé !
+                        <h1 className="text-3xl md:text-5xl font-extrabold text-[#143D59] mb-6 tracking-tight">
+                            Message reçu !
                         </h1>
-                        <p className="text-[#143D59] text-xl font-medium mb-10 opacity-80 leading-relaxed">
-                            Merci {formData.nom}. Nous avons bien reçu votre message et notre équipe vous répondra dans les plus brefs délais.
+                        <p className="text-[#143D59] text-xl font-medium mb-10 opacity-90 leading-relaxed">
+                            Merci <span className="text-[#F4B41A]">{formData.nom}</span>. Nous avons bien reçu votre demande et notre équipe vous contactera très prochainement.
                         </p>
                         <button
                             onClick={() => window.location.href = '/'}
-                            className="bg-[#143D59] text-white font-extrabold py-5 px-12 rounded-xl shadow-lg hover:bg-[#1c4d6f] transition-all text-xl uppercase tracking-widest"
+                            className="bg-[#143D59] text-white font-bold py-5 px-12 rounded-2xl shadow-lg hover:bg-[#1c4d6f] transition-all transform hover:-translate-y-1 active:scale-95 text-xl uppercase tracking-widest"
                         >
                             Retour à l'accueil
                         </button>
@@ -86,156 +89,197 @@ export default function ContactPage() {
             <Header />
 
             {/* Hero Section */}
-            <section className="bg-gray-100 py-10 md:py-16" suppressHydrationWarning>
-                <div className="container mx-auto px-4 max-w-7xl text-center md:text-left" suppressHydrationWarning>
-                    <h1 className="text-2xl md:text-4xl font-bold text-[#143D59] mb-3 md:mb-4">
-                        Contactez Guinex
-                    </h1>
-                    <p className="text-gray-700 text-base md:text-lg mb-3 md:mb-4">
-                        Une question ? Un besoin de livraison ? Une demande de partenariat ?
-                    </p>
-                    <p className="text-gray-700 text-base md:text-lg max-w-3xl mx-auto md:mx-0">
-                        Notre équipe est disponible pour vous répondre rapidement et organiser vos livraisons dans les meilleures conditions.
-                    </p>
+            <section className="relative w-full h-[40vh] md:h-[50vh] flex items-center overflow-hidden" suppressHydrationWarning>
+                <div className="absolute inset-0 z-0" suppressHydrationWarning>
+                    <Image
+                        src="/images/hero/backgroundhero.png"
+                        alt="Contact Guinex"
+                        fill
+                        priority
+                        className="object-cover"
+                        style={{ objectFit: 'cover' }}
+                    />
+                    <div className="absolute inset-0 bg-[#143D59]/80 backdrop-blur-[2px]"></div>
                 </div>
-            </section>
 
-            {/* Split Section: Entreprises / Particuliers */}
-            <section className="py-10 md:py-20 border-b border-gray-200" suppressHydrationWarning>
-                <div className="container mx-auto px-4 max-w-7xl" suppressHydrationWarning>
-                    <div className="flex flex-col md:flex-row md:space-x-12 lg:space-x-24 space-y-10 md:space-y-0" suppressHydrationWarning>
-                        {/* Pour les entreprises */}
-                        <div className="flex-1 text-center md:text-left">
-                            <h2 className="text-xl md:text-2xl font-bold text-[#143D59] mb-3 md:mb-4">
-                                Pour les entreprises
-                            </h2>
-                            <p className="text-gray-700 mb-4 md:mb-6 text-base leading-relaxed">
-                                Vous souhaitez mettre en place la livraison de repas pour vos équipes ou bénéficier d'un service coursier professionnel pour vos documents et colis ?
-                            </p>
-                            <p className="text-gray-700 text-base">
-                                Contactez-nous pour une offre adaptée à votre entreprise.
-                            </p>
-                        </div>
-
-                        {/* Divider for desktop */}
-                        <div className="hidden md:block w-px bg-gray-400 self-stretch"></div>
-
-                        {/* Pour les particuliers */}
-                        <div className="flex-1 text-center md:text-left">
-                            <h2 className="text-xl md:text-2xl font-bold text-[#143D59] mb-3 md:mb-4">
-                                Pour les particuliers
-                            </h2>
-                            <p className="text-gray-700 mb-4 md:mb-6 text-base leading-relaxed">
-                                Besoin d'envoyer un colis, un document ou de vous faire livrer un repas ?
-                            </p>
-                            <p className="text-gray-700 text-base">
-                                Guinex vous accompagne avec un service simple, rapide et fiable.
-                            </p>
-                        </div>
+                <div className="container mx-auto max-w-7xl px-4 z-10 relative" suppressHydrationWarning>
+                    <div className="max-w-3xl animate-fade-in-up">
+                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+                            Contactez <span className="text-[#F4B41A]">Guinex</span>
+                        </h1>
+                        <p className="text-white/90 text-[14px] xs:text-base sm:text-lg md:text-xl lg:text-2xl font-light leading-relaxed mb-4 whitespace-nowrap">
+                            Une question&nbsp;? Un besoin de livraison&nbsp;? Une demande de partenariat&nbsp;?
+                        </p>
+                        <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
+                            Notre équipe est disponible pour vous répondre rapidement et organiser vos livraisons dans les meilleures conditions.
+                        </p>
                     </div>
                 </div>
             </section>
 
-            {/* Contact Info & Form Section */}
-            <section className="py-10 md:py-20 flex-grow">
+            {/* Main Content Side by Side */}
+            <section className="py-20 md:py-32 bg-white relative">
                 <div className="container mx-auto px-4 max-w-7xl">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24">
-                        {/* Left: Coordonnées */}
-                        <div>
-                            <h2 className="text-2xl md:text-3xl font-bold text-[#143D59] mb-6 md:mb-8 text-center md:text-left">
-                                Nos coordonnées
-                            </h2>
-                            <div className="space-y-5 md:space-y-6">
-                                <div className="flex items-start justify-center md:justify-start space-x-4">
-                                    <MapPin className="w-6 h-6 text-red-500 mt-1 flex-shrink-0" />
-                                    <span className="text-base md:text-lg text-black text-center md:text-left">
-                                        Zone d'intervention : Conakry
-                                    </span>
-                                </div>
-                                <div className="flex items-start justify-center md:justify-start space-x-4">
-                                    <Phone className="w-6 h-6 text-gray-700 mt-1 flex-shrink-0" />
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+
+                        {/* Left Column: Info & Trust */}
+                        <div className="lg:col-span-5 space-y-12">
+                            <div>
+                                <h2 className="text-3xl font-bold text-[#143D59] mb-8">
+                                    Nos <span className="text-[#F4B41A]">Coordonnées</span>
+                                </h2>
+                                <div className="space-y-6">
+                                    {/* WhatsApp Card */}
                                     <a
-                                        href="https://api.whatsapp.com/message/YSOEJ42GH54ED1?autoload=1&app_absent=0"
+                                        href="https://api.whatsapp.com/message/YSOEJ42GH54ED1"
                                         target="_blank"
-                                        className="text-base md:text-lg text-black text-center md:text-left hover:text-[#F4B41A] transition-colors underline decoration-1 underline-offset-4"
+                                        className="group flex items-center p-6 bg-gray-50 rounded-2xl border border-transparent hover:border-[#F4B41A] hover:bg-white hover:shadow-xl transition-all duration-300"
                                     >
-                                        Téléphone / WhatsApp : 610 29 20 29
+                                        <div className="bg-[#F4B41A]/10 p-4 rounded-xl group-hover:bg-[#F4B41A] transition-colors duration-300">
+                                            <Phone className="w-6 h-6 text-[#143D59]" />
+                                        </div>
+                                        <div className="ml-6">
+                                            <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider">WhatsApp & Téléphone</p>
+                                            <p className="text-xl font-bold text-[#143D59]">610 29 20 29</p>
+                                        </div>
                                     </a>
+
+                                    {/* Email Card */}
+                                    <div className="group flex items-center p-6 bg-gray-50 rounded-2xl border border-transparent hover:border-[#143D59] hover:bg-white hover:shadow-xl transition-all duration-300">
+                                        <div className="bg-[#143D59]/10 p-4 rounded-xl group-hover:bg-[#143D59] transition-colors duration-300">
+                                            <Mail className="w-6 h-6 text-[#143D59] group-hover:text-white" />
+                                        </div>
+                                        <div className="ml-6">
+                                            <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Email</p>
+                                            <p className="text-xl font-bold text-[#143D59]">guinex.contact@gmail.com</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Location Card */}
+                                    <div className="group flex items-center p-6 bg-gray-50 rounded-2xl border border-transparent hover:border-[#143D59] hover:bg-white hover:shadow-xl transition-all duration-300">
+                                        <div className="bg-[#143D59]/10 p-4 rounded-xl group-hover:bg-[#143D59] transition-colors duration-300">
+                                            <MapPin className="w-6 h-6 text-[#143D59] group-hover:text-white" />
+                                        </div>
+                                        <div className="ml-6">
+                                            <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Zone d'intervention</p>
+                                            <p className="text-xl font-bold text-[#143D59]">Conakry, Guinée</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="flex items-start justify-center md:justify-start space-x-4">
-                                    <Mail className="w-6 h-6 text-gray-400 mt-1 flex-shrink-0" />
-                                    <span className="text-base md:text-lg text-black text-center md:text-left">
-                                        Email : guinex.contact@gmail.com
-                                    </span>
+                            </div>
+
+                            {/* Trust Features */}
+                            <div className="bg-[#143D59] p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
+                                <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/5 rounded-full blur-3xl group-hover:bg-white/10 transition-colors"></div>
+                                <h3 className="text-2xl font-bold text-white mb-8 relative z-10">Pourquoi nous choisir ?</h3>
+                                <div className="space-y-6 relative z-10">
+                                    <div className="flex items-center space-x-4">
+                                        <div className="bg-[#F4B41A] p-2 rounded-lg">
+                                            <Clock className="w-5 h-5 text-[#143D59]" />
+                                        </div>
+                                        <span className="text-white/90 text-lg">Réponse ultra-rapide</span>
+                                    </div>
+                                    <div className="flex items-center space-x-4">
+                                        <div className="bg-[#F4B41A] p-2 rounded-lg">
+                                            <ShieldCheck className="w-5 h-5 text-[#143D59]" />
+                                        </div>
+                                        <span className="text-white/90 text-lg">Service 100% sécurisé</span>
+                                    </div>
+                                    <div className="flex items-center space-x-4">
+                                        <div className="bg-[#F4B41A] p-2 rounded-lg">
+                                            <MessageSquare className="w-5 h-5 text-[#143D59]" />
+                                        </div>
+                                        <span className="text-white/90 text-lg">Support personnalisé</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Right: Formulaire */}
-                        <div className="bg-gray-100/50 p-5 md:p-8 rounded-2xl shadow-sm border border-gray-100">
-                            <h2 className="text-xl md:text-2xl font-bold text-[#143D59] mb-5 md:mb-6 text-center md:text-left">
-                                Formulaire de contact
-                            </h2>
-                            <form onSubmit={handleSubmit} className="space-y-4">
-                                <div>
-                                    <input
-                                        type="text"
-                                        name="nom"
-                                        required
-                                        value={formData.nom}
-                                        onChange={handleInputChange}
-                                        placeholder="Nom"
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F4B41A] focus:border-transparent bg-white text-gray-900 text-sm md:text-base"
-                                    />
+                        {/* Right Column: Interactive Form */}
+                        <div className="lg:col-span-7">
+                            <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100 relative overflow-hidden">
+                                <div className="absolute -top-6 -right-6 text-gray-50 hidden md:block pointer-events-none select-none">
+                                    <MessageSquare size={180} strokeWidth={1} />
                                 </div>
-                                <div>
-                                    <input
-                                        type="tel"
-                                        name="telephone"
-                                        required
-                                        value={formData.telephone}
-                                        onChange={handleInputChange}
-                                        placeholder="Téléphone"
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F4B41A] focus:border-transparent bg-white text-gray-900 text-sm md:text-base"
-                                    />
+
+                                <div className="relative z-10">
+                                    <h2 className="text-3xl font-bold text-[#143D59] mb-4">
+                                        Envoyez-nous un <span className="text-[#F4B41A]">message</span>
+                                    </h2>
+                                    <p className="text-gray-500 mb-10 text-lg max-w-xl">Remplissez ce formulaire et nous reviendrons vers vous en moins de 24h.</p>
                                 </div>
-                                <div>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        required
-                                        value={formData.email}
-                                        onChange={handleInputChange}
-                                        placeholder="Email"
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F4B41A] focus:border-transparent bg-white text-gray-900 text-sm md:text-base"
-                                    />
-                                </div>
-                                <div>
-                                    <textarea
-                                        name="message"
-                                        required
-                                        value={formData.message}
-                                        onChange={handleInputChange}
-                                        placeholder="Message"
-                                        rows={5}
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F4B41A] focus:border-transparent bg-white text-gray-900 resize-none text-sm md:text-base"
-                                    ></textarea>
-                                </div>
-                                <button
-                                    type="submit"
-                                    disabled={isSubmitting}
-                                    className="w-full bg-[#F4B41A] hover:bg-[#d9a016] text-[#143D59] font-bold py-3 px-6 rounded-lg transition-colors duration-200 text-base md:text-lg shadow-sm flex items-center justify-center gap-2 disabled:opacity-70"
-                                >
-                                    {isSubmitting ? (
-                                        <>
-                                            <Loader2 className="w-5 h-5 animate-spin" />
-                                            Envoi en cours...
-                                        </>
-                                    ) : (
-                                        "Envoyez ma demande"
-                                    )}
-                                </button>
-                            </form>
+
+                                <form onSubmit={handleSubmit} className="space-y-6">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-bold text-[#143D59] ml-1">Nom complet</label>
+                                            <input
+                                                type="text"
+                                                name="nom"
+                                                required
+                                                value={formData.nom}
+                                                onChange={handleInputChange}
+                                                placeholder="Fils Preley"
+                                                className="w-full px-6 py-4 rounded-2xl border-2 border-gray-50 focus:border-[#F4B41A] outline-none bg-gray-50/50 transition-all text-[#143D59] placeholder:text-gray-300 font-medium"
+                                            />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-bold text-[#143D59] ml-1">Téléphone</label>
+                                            <input
+                                                type="tel"
+                                                name="telephone"
+                                                required
+                                                value={formData.telephone}
+                                                onChange={handleInputChange}
+                                                placeholder="6xx xx xx xx"
+                                                className="w-full px-6 py-4 rounded-2xl border-2 border-gray-50 focus:border-[#F4B41A] outline-none bg-gray-50/50 transition-all text-[#143D59] placeholder:text-gray-300 font-medium"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-bold text-[#143D59] ml-1">Adresse Email</label>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            required
+                                            value={formData.email}
+                                            onChange={handleInputChange}
+                                            placeholder="votre@email.com"
+                                            className="w-full px-6 py-4 rounded-2xl border-2 border-gray-50 focus:border-[#F4B41A] outline-none bg-gray-50/50 transition-all text-[#143D59] placeholder:text-gray-300 font-medium"
+                                        />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-bold text-[#143D59] ml-1">Votre message</label>
+                                        <textarea
+                                            name="message"
+                                            required
+                                            value={formData.message}
+                                            onChange={handleInputChange}
+                                            placeholder="Comment pouvons-nous vous aider ?"
+                                            rows={5}
+                                            className="w-full px-6 py-4 rounded-2xl border-2 border-gray-50 focus:border-[#F4B41A] outline-none bg-gray-50/50 transition-all text-[#143D59] placeholder:text-gray-300 font-medium resize-none"
+                                        ></textarea>
+                                    </div>
+
+                                    <button
+                                        type="submit"
+                                        disabled={isSubmitting}
+                                        className="w-full bg-[#143D59] hover:bg-[#1a4b6d] text-white font-bold py-5 px-8 rounded-2xl transition-all duration-300 text-lg shadow-xl shadow-blue-900/10 flex items-center justify-center gap-3 disabled:opacity-70 group"
+                                    >
+                                        {isSubmitting ? (
+                                            <>
+                                                <Loader2 className="w-6 h-6 animate-spin" />
+                                                Envoi en cours...
+                                            </>
+                                        ) : (
+                                            <>
+                                                Envoyer ma demande
+                                                <MessageSquare className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                            </>
+                                        )}
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
