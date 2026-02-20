@@ -58,6 +58,7 @@ export default function Hero() {
                     alt="Background Hero"
                     fill
                     priority
+                    sizes="100vw"
                     className="object-cover"
                     style={{ objectFit: 'cover' }}
                 />

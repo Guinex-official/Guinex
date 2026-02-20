@@ -127,6 +127,7 @@ export default function LivreursPage() {
                         className="object-cover"
                         style={{ objectFit: 'cover' }}
                         priority
+                        sizes="100vw"
                     />
                     <div className="absolute inset-0 bg-white/50"></div>
                 </div>

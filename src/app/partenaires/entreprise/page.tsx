@@ -25,6 +25,7 @@ export default function EntreprisePage() {
                         className="object-cover"
                         style={{ objectFit: 'cover' }}
                         priority
+                        sizes="100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/20 to-white/90"></div>
                 </div>

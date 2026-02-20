@@ -24,6 +24,7 @@ export default function RestaurantsPage() {
                         className="object-cover"
                         style={{ objectFit: 'cover' }}
                         priority
+                        sizes="100vw"
                     />
                     <div className="absolute inset-0 bg-white/65"></div>
                 </div>
