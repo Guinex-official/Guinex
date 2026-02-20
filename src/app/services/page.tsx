@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import { Utensils, Package } from "lucide-react";
 
 export default function ServicesPage() {
     return (
@@ -28,7 +29,7 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Content Section */}
-                <div className="relative w-full bg-transparent md:bg-transparent md:absolute md:inset-0 md:flex md:flex-col md:items-center md:justify-center z-10 pt-20 md:pt-0 pb-24 md:pb-0">
+                <div className="relative w-full bg-transparent md:bg-transparent md:absolute md:inset-0 md:flex md:flex-col md:items-center md:justify-start z-10 pt-16 md:pt-20 pb-24 md:pb-0">
                     <div className="container mx-auto max-w-7xl px-4 text-center">
                         <h1
                             className="text-[40px] md:text-7xl font-bold text-white mb-12 md:pt-10 drop-shadow-xl"
@@ -38,48 +39,34 @@ export default function ServicesPage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-4xl mx-auto px-4 mb-20">
                             {/* Card 1: Livraison de repas */}
-                            <div className="flex flex-col w-full">
-                                {/* Card Header - Consistent Solid Style */}
-                                <div className="bg-[#D1D9E1] py-3 px-5 text-center flex items-center justify-center space-x-3 rounded-t-2xl shadow-md border-b-0 w-full z-10 relative">
-                                    <div className="w-5 h-5 md:w-7 md:h-7 relative flex-shrink-0">
+                            <div className="flex flex-col h-full bg-white rounded-xl shadow-xl overflow-hidden transform transition-all hover:scale-[1.01] duration-300">
+                                <div className="bg-[#143D59] p-4 flex items-center justify-center gap-3">
+                                    <div className="w-5 h-5 relative flex-shrink-0">
                                         <Image src="/images/icons/repasicon.png" fill alt="Repas" className="object-contain" priority sizes="32px" />
                                     </div>
-                                    <h3 className="text-lg md:text-xl font-bold text-[#143D59]">
-                                        Repas
-                                    </h3>
+                                    <h3 className="text-sm md:text-base font-extrabold text-white uppercase tracking-wide">Repas</h3>
                                 </div>
-                                {/* Card Body - Solid light background */}
-                                <div className="bg-[#eff1f3] rounded-b-2xl shadow-sm hover:shadow-md transition-shadow p-6 md:p-10 flex-grow border border-gray-100 border-t-0 w-full">
-                                    <div className="text-center space-y-4">
-                                        <h4 className="text-xl md:text-2xl font-bold text-[#143D59]">Livraison de repas</h4>
-                                        <div className="h-1 w-12 bg-[#F4B41A] mx-auto rounded-full"></div>
-                                        <p className="text-[#143D59] text-base md:text-lg font-medium leading-relaxed opacity-90">
-                                            Pour les entreprises et les particuliers
-                                        </p>
-                                    </div>
+                                <div className="p-6 md:p-8 flex flex-col items-center justify-center flex-grow bg-[#eff1f3]">
+                                    <h4 className="text-lg md:text-xl font-bold text-[#143D59] mb-3 text-center">Livraison de repas</h4>
+                                    <p className="text-[#143D59]/80 text-center text-sm md:text-base font-medium leading-relaxed">
+                                        Pour les entreprises et les particuliers
+                                    </p>
                                 </div>
                             </div>
 
                             {/* Card 2: Service coursier */}
-                            <div className="flex flex-col w-full">
-                                {/* Card Header - Consistent Solid Style */}
-                                <div className="bg-[#D1D9E1] py-3 px-5 text-center flex items-center justify-center space-x-3 rounded-t-2xl shadow-md border-b-0 w-full z-10 relative">
-                                    <div className="w-5 h-5 md:w-7 md:h-7 relative flex-shrink-0">
+                            <div className="flex flex-col h-full bg-white rounded-xl shadow-xl overflow-hidden transform transition-all hover:scale-[1.01] duration-300">
+                                <div className="bg-[#F4B41A] p-4 flex items-center justify-center gap-3">
+                                    <div className="w-5 h-5 relative flex-shrink-0">
                                         <Image src="/images/icons/serviceicon.png" fill alt="Coursier" className="object-contain" priority sizes="32px" />
                                     </div>
-                                    <h3 className="text-lg md:text-xl font-bold text-[#143D59]">
-                                        Coursier
-                                    </h3>
+                                    <h3 className="text-sm md:text-base font-extrabold text-[#143D59] uppercase tracking-wide">Coursier</h3>
                                 </div>
-                                {/* Card Body - Solid light background */}
-                                <div className="bg-[#eff1f3] rounded-b-2xl shadow-sm hover:shadow-md transition-shadow p-6 md:p-10 flex-grow border border-gray-100 border-t-0 w-full">
-                                    <div className="text-center space-y-4">
-                                        <h4 className="text-xl md:text-2xl font-bold text-[#143D59]">Service coursier</h4>
-                                        <div className="h-1 w-12 bg-[#F4B41A] mx-auto rounded-full"></div>
-                                        <p className="text-[#143D59] text-base md:text-lg font-medium leading-relaxed opacity-90">
-                                            Documents et petits colis
-                                        </p>
-                                    </div>
+                                <div className="p-6 md:p-8 flex flex-col items-center justify-center flex-grow bg-[#eff1f3]">
+                                    <h4 className="text-lg md:text-xl font-bold text-[#143D59] mb-3 text-center">Service coursier</h4>
+                                    <p className="text-[#143D59]/80 text-center text-sm md:text-base font-medium leading-relaxed">
+                                        Documents et petits colis
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -90,14 +77,14 @@ export default function ServicesPage() {
                                 Pourquoi choisir <span className="text-[#F4B41A]">Guinex ?</span>
                             </h2>
 
-                            <div className="max-w-4xl mx-auto space-y-4 bg-white/10 backdrop-blur-md p-6 md:p-10 rounded-3xl border border-white/20 shadow-xl">
-                                <p className="text-xl md:text-2xl text-white font-medium leading-relaxed">
+                            <div className="max-w-4xl mx-auto space-y-4 bg-white/20 backdrop-blur-md p-6 md:p-10 rounded-3xl border border-white/30 shadow-2xl">
+                                <p className="text-lg md:text-xl text-white font-semibold leading-relaxed drop-shadow-sm">
                                     Rapidité, professionnalisme et fiabilité pour vos livraisons à Conakry.
                                 </p>
-                                <p className="text-lg md:text-2xl text-white/90 font-medium leading-relaxed">
+                                <p className="text-base md:text-lg text-white font-medium leading-relaxed drop-shadow-sm">
                                     Un service adapté aux entreprises comme aux particuliers, avec suivi des envois et gain de temps pour vos équipes.
                                 </p>
-                                <p className="text-xl md:text-2xl font-bold text-[#F4B41A] uppercase tracking-tight">
+                                <p className="text-lg md:text-xl font-bold text-[#F4B41A] uppercase tracking-tight drop-shadow-md">
                                     Guinex, une solution locale pensée pour les réalités du terrain.
                                 </p>
                             </div>

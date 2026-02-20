@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import Image from "next/image";
-import { CheckCircle2, Loader2, PartyPopper } from "lucide-react";
+import { CheckCircle2, Loader2, PartyPopper, Banknote, Clock, Trophy, ShieldCheck } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -66,7 +66,7 @@ export default function LivreursPage() {
                 // ... (reset state logic)
             } else {
                 const errorData = await response.json();
-                alert(`Erreur: ${errorData.message || "Une erreur est survenue"} (${errorData.error || "d├®tail inconnu"})`);
+                alert(`Erreur: ${errorData.message || "Une erreur est survenue"} (${errorData.error || "détail inconnu"})`);
             }
         } catch (error) {
             console.error("Erreur:", error);
@@ -86,16 +86,16 @@ export default function LivreursPage() {
                             <PartyPopper className="w-12 h-12 text-white" />
                         </div>
                         <h1 className="text-3xl md:text-5xl font-extrabold text-[#143D59] mb-6">
-                            Candidature envoy├®e !
+                            Candidature envoyée !
                         </h1>
                         <p className="text-[#143D59] text-xl font-medium mb-10 opacity-80 leading-relaxed">
-                            Merci {formData.nom}. Votre demande a ├®t├® re├ºue avec succ├¿s. Notre ├®quipe vous contactera tr├¿s prochainement par WhatsApp ou appel.
+                            Merci {formData.nom}. Votre demande a été reçue avec succès. Notre équipe vous contactera très prochainement par WhatsApp ou appel.
                         </p>
                         <button
                             onClick={() => window.location.href = '/'}
                             className="bg-[#F4B41A] text-[#143D59] font-extrabold py-5 px-12 rounded-xl shadow-lg hover:bg-yellow-500 transition-all text-xl uppercase tracking-widest"
                         >
-                            Retour ├á l'accueil
+                            Retour à l'accueil
                         </button>
                     </div>
                 </section>
@@ -136,7 +136,7 @@ export default function LivreursPage() {
                     </h1>
 
                     <p className="text-white text-center text-lg md:text-2xl font-bold max-w-2xl mb-12 px-4 leading-relaxed tracking-tight">
-                        Rejoignez une ├®quipe professionnelle et participez au d├®veloppement d'un service de livraison moderne en Guin├®e.
+                        Rejoignez une équipe professionnelle et participez au développement d'un service de livraison moderne en Guinée.
                     </p>
 
                     {/* Hero CTA */}
@@ -163,40 +163,40 @@ export default function LivreursPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl px-4 md:px-8">
                     {[
                         {
-                            icon: "💰",
+                            icon: <Banknote className="w-6 h-6 text-[#143D59]" fill="#143D59" fillOpacity="0.1" />,
                             title: "Revenus réguliers",
                             text: "Gagnez de l'argent à chaque course, avec des paiements fiables et réguliers.",
-                            color: "from-[#143D59] to-[#1c5278]"
+                            bgColor: "bg-[#143D59]/10",
+                            hoverBg: "group-hover:bg-[#143D59]/20"
                         },
                         {
-                            icon: "🕐",
+                            icon: <Clock className="w-6 h-6 text-[#F4B41A]" />,
                             title: "Horaires flexibles",
                             text: "Choisissez vos horaires et travaillez à votre propre rythme, en toute liberté.",
-                            color: "from-[#F4B41A] to-[#f5c842]"
+                            bgColor: "bg-[#F4B41A]/10",
+                            hoverBg: "group-hover:bg-[#F4B41A]/20"
                         },
                         {
-                            icon: "🏆",
+                            icon: <Trophy className="w-6 h-6 text-[#143D59]" />,
                             title: "Organisation pro",
                             text: "Travaillez avec une équipe sérieuse, structurée et toujours disponible.",
-                            color: "from-[#143D59] to-[#1c5278]"
+                            bgColor: "bg-[#143D59]/10",
+                            hoverBg: "group-hover:bg-[#143D59]/20"
                         },
                         {
-                            icon: "🛡️",
+                            icon: <ShieldCheck className="w-6 h-6 text-[#F4B41A]" fill="#F4B41A" fillOpacity="0.1" />,
                             title: "Respect & sécurité",
                             text: "Rejoignez une entreprise qui valorise votre sécurité et votre bien-être.",
-                            color: "from-[#F4B41A] to-[#f5c842]"
+                            bgColor: "bg-[#F4B41A]/10",
+                            hoverBg: "group-hover:bg-[#F4B41A]/20"
                         }
                     ].map((benefit, i) => (
-                        <div key={i} className="group flex flex-col bg-white rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-1">
-                            {/* Card top accent */}
-                            <div className={`bg-gradient-to-br ${benefit.color} p-6 flex items-center justify-center`}>
-                                <span className="text-4xl">{benefit.icon}</span>
+                        <div key={i} className="bg-white rounded-xl p-6 flex flex-col items-center text-center border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                            <div className={`w-12 h-12 ${benefit.bgColor} rounded-lg flex items-center justify-center mb-5 ${benefit.hoverBg} transition-colors`}>
+                                {benefit.icon}
                             </div>
-                            {/* Card body */}
-                            <div className="p-6 flex flex-col gap-2 flex-grow">
-                                <h3 className="text-[#143D59] font-extrabold text-lg">{benefit.title}</h3>
-                                <p className="text-gray-500 text-sm leading-relaxed">{benefit.text}</p>
-                            </div>
+                            <h3 className="text-lg font-bold text-[#143D59] mb-2">{benefit.title}</h3>
+                            <p className="text-[#143D59]/60 text-sm font-medium leading-relaxed">{benefit.text}</p>
                         </div>
                     ))}
                 </div>
@@ -216,9 +216,9 @@ export default function LivreursPage() {
                         <ul className="space-y-6 w-full max-w-sm lg:max-w-none">
                             {[
                                 "Avoir un permis de conduire",
-                                "Avoir un t├®l├®phone Android",
-                                "Bien conna├«tre la ville",
-                                "Pi├¿ce d'identit├® valide",
+                                "Avoir un téléphone Android",
+                                "Bien connaître la ville",
+                                "Pièce d'identité valide",
                                 "Savoir lire et utiliser WhatsApp / Google Maps"
                             ].map((condition, index) => (
                                 <li key={index} className="flex items-start lg:items-center gap-4 justify-start lg:justify-start">
@@ -247,7 +247,7 @@ export default function LivreursPage() {
                                 required
                                 value={formData.nom}
                                 onChange={handleInputChange}
-                                placeholder="Nom et pr├®nom"
+                                placeholder="Nom et prénom"
                                 className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#F4B41A]/50 shadow-sm bg-white text-black placeholder-gray-500"
                             />
                             <input
@@ -256,7 +256,7 @@ export default function LivreursPage() {
                                 required
                                 value={formData.telephone}
                                 onChange={handleInputChange}
-                                placeholder="Num├®ro de t├®l├®phone(whatsapp)"
+                                placeholder="Numéro de téléphone(whatsapp)"
                                 className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#F4B41A]/50 shadow-sm bg-white text-black placeholder-gray-500"
                             />
                             <input
@@ -265,7 +265,7 @@ export default function LivreursPage() {
                                 required
                                 value={formData.quartier}
                                 onChange={handleInputChange}
-                                placeholder="Quartier de r├®sidence"
+                                placeholder="Quartier de résidence"
                                 className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#F4B41A]/50 shadow-sm bg-white text-black placeholder-gray-500"
                             />
 
@@ -327,7 +327,7 @@ export default function LivreursPage() {
 
                             {/* Availability Toggle */}
                             <div className="flex items-center justify-between pt-2">
-                                <span className="text-[#143D59] font-semibold text-lg">Disponibilit├®</span>
+                                <span className="text-[#143D59] font-semibold text-lg">Disponibilité</span>
                                 <div className="flex items-center bg-gray-200/50 rounded-xl p-1 gap-1">
                                     <button
                                         type="button"

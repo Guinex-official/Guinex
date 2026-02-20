@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, ShoppingBag, LayoutDashboard, Zap, TrendingUp, Coins, Truck } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ui/ContactModal";
@@ -38,38 +38,41 @@ export default function RestaurantsPage() {
                     </h1>
 
                     {/* Services Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 w-full max-w-5xl">
-                        {/* Card 1 */}
-                        <div className="bg-white/80 backdrop-blur-md rounded-2xl overflow-hidden shadow-md flex flex-col h-full transform transition-all hover:shadow-lg border border-white/50">
-                            <div className="bg-[#143D59]/5 p-4 text-center border-b border-gray-100">
-                                <h3 className="text-base md:text-lg font-bold text-[#143D59]">Recevoir des commandes</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
+                        {/* Card 1: Commandes */}
+                        <div className="flex flex-col h-full bg-white rounded-xl shadow-xl overflow-hidden transform transition-all hover:scale-[1.01] duration-300">
+                            <div className="bg-[#F4B41A] p-4 flex items-center justify-center gap-3">
+                                <ShoppingBag className="w-5 h-5 text-[#143D59] shrink-0" />
+                                <h3 className="text-sm md:text-base font-extrabold text-[#143D59] uppercase tracking-wide">Recevoir des commandes</h3>
                             </div>
-                            <div className="p-6 md:p-10 flex items-center justify-center flex-grow">
-                                <p className="text-[#143D59] text-center text-base md:text-lg font-medium leading-relaxed">
+                            <div className="p-6 flex items-center justify-center flex-grow bg-[#eff1f3]">
+                                <p className="text-[#143D59] text-center text-sm md:text-base font-bold leading-relaxed">
                                     Recevez les commandes <br /> de vos clients
                                 </p>
                             </div>
                         </div>
 
-                        {/* Card 2 */}
-                        <div className="bg-white/80 backdrop-blur-md rounded-2xl overflow-hidden shadow-md flex flex-col h-full transform transition-all hover:shadow-lg border border-white/50">
-                            <div className="bg-[#143D59]/5 p-4 text-center border-b border-gray-100">
-                                <h3 className="text-base md:text-lg font-bold text-[#143D59]">Gestion simplifiée</h3>
+                        {/* Card 2: Gestion */}
+                        <div className="flex flex-col h-full bg-white rounded-xl shadow-xl overflow-hidden transform transition-all hover:scale-[1.01] duration-300">
+                            <div className="bg-[#143D59] p-4 flex items-center justify-center gap-3">
+                                <LayoutDashboard className="w-5 h-5 text-[#F4B41A] shrink-0" />
+                                <h3 className="text-sm md:text-base font-extrabold text-white uppercase tracking-wide">Gestion simplifiée</h3>
                             </div>
-                            <div className="p-6 md:p-10 flex items-center justify-center flex-grow">
-                                <p className="text-[#143D59] text-center text-base md:text-lg font-medium leading-relaxed">
+                            <div className="p-6 flex items-center justify-center flex-grow bg-[#eff1f3]">
+                                <p className="text-[#143D59] text-center text-sm md:text-base font-bold leading-relaxed">
                                     Suivez et gérez <br /> facilement vos livraisons
                                 </p>
                             </div>
                         </div>
 
-                        {/* Card 3 */}
-                        <div className="bg-white/80 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg flex flex-col h-full transform transition-all hover:shadow-xl border border-white/50">
-                            <div className="bg-[#143D59]/5 p-4 text-center border-b border-gray-100">
-                                <h3 className="text-base md:text-lg font-bold text-[#143D59]">Livraison rapide</h3>
+                        {/* Card 3: Livraison */}
+                        <div className="flex flex-col h-full bg-white rounded-xl shadow-xl overflow-hidden transform transition-all hover:scale-[1.01] duration-300">
+                            <div className="bg-[#F4B41A] p-4 flex items-center justify-center gap-3">
+                                <Zap className="w-5 h-5 text-[#143D59] shrink-0" />
+                                <h3 className="text-sm md:text-base font-extrabold text-[#143D59] uppercase tracking-wide">Livraison rapide</h3>
                             </div>
-                            <div className="p-6 md:p-10 flex items-center justify-center flex-grow">
-                                <p className="text-[#143D59] text-center text-base md:text-lg font-medium leading-relaxed">
+                            <div className="p-6 flex items-center justify-center flex-grow bg-[#eff1f3]">
+                                <p className="text-[#143D59] text-center text-sm md:text-base font-bold leading-relaxed">
                                     Nos livreurs livrent <br /> rapidement vos repas
                                 </p>
                             </div>
@@ -78,35 +81,42 @@ export default function RestaurantsPage() {
                 </div>
             </section>
 
-            {/* "Pourquoi devenir partenaire Guinex" Section */}
-            <section className="w-full py-12 md:py-20 bg-white flex flex-col items-center px-4">
-                <div className="w-full max-w-4xl border-[2px] border-[#143D59] rounded-3xl p-6 md:p-14 relative bg-white shadow-sm">
-                    <h2 className="text-xl md:text-3xl font-bold text-center text-[#143D59] mb-10 md:mb-16 italic">
-                        Pourquoi devenir partenaire Guinex
-                    </h2>
+            {/* "Pourquoi choisir Guinex" Section - Premium Minimalist */}
+            <section className="w-full pb-12 pt-20 bg-white flex flex-col items-center">
+                <div className="w-full max-w-5xl px-4">
+                    <div className="flex flex-col items-center mb-12">
+                        <div className="h-1 w-12 bg-[#F4B41A] mb-4 rounded-full"></div>
+                        <h2 className="text-3xl md:text-4xl font-extrabold text-[#143D59] text-center">
+                            Pourquoi devenir partenaire Guinex
+                        </h2>
+                    </div>
 
-                    <div className="flex flex-col items-center gap-4 md:gap-6 max-w-3xl mx-auto">
-                        {/* Top Row: 2 cards */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 w-full">
-                            {/* Pill 1 */}
-                            <div className="bg-[#DAE1E7] rounded-xl px-6 py-4 md:px-10 md:py-6 flex flex-col items-center justify-center shadow-sm transform hover:scale-[1.02] transition-transform border border-gray-200">
-                                <h3 className="text-lg md:text-xl font-bold text-black leading-tight">Augmentez</h3>
-                                <p className="text-base md:text-lg font-medium text-black opacity-80">vos ventes</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
+                        {/* Feature 1: Ventes */}
+                        <div className="bg-white rounded-xl p-6 flex flex-col items-center text-center border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                            <div className="w-12 h-12 bg-[#F4B41A]/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-[#F4B41A]/20 transition-colors">
+                                <TrendingUp className="w-6 h-6 text-[#F4B41A]" />
                             </div>
-
-                            {/* Pill 2 */}
-                            <div className="bg-[#DAE1E7] rounded-xl px-6 py-4 md:px-10 md:py-6 flex flex-col items-center justify-center shadow-sm transform hover:scale-[1.02] transition-transform border border-gray-200">
-                                <h3 className="text-lg md:text-xl font-bold text-black leading-tight">Commission</h3>
-                                <p className="text-base md:text-lg font-medium text-black opacity-80">avantageuse</p>
-                            </div>
+                            <h3 className="text-lg font-bold text-[#143D59] mb-2">Ventes</h3>
+                            <p className="text-[#143D59]/60 text-sm font-medium leading-relaxed">Augmentez vos revenus mensuels</p>
                         </div>
 
-                        {/* Bottom Row: 1 centered card */}
-                        <div className="w-full max-w-[280px] md:max-w-[320px]">
-                            {/* Pill 3 */}
-                            <div className="bg-[#DAE1E7] rounded-xl px-6 py-4 md:px-10 md:py-6 flex flex-col items-center justify-center shadow-sm transform hover:scale-[1.02] transition-transform border border-gray-200 w-full">
-                                <p className="text-lg md:text-xl font-bold text-black text-center">Livraison fiable</p>
+                        {/* Feature 2: Commission */}
+                        <div className="bg-white rounded-xl p-6 flex flex-col items-center text-center border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                            <div className="w-12 h-12 bg-[#143D59]/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-[#143D59]/20 transition-colors">
+                                <Coins className="w-6 h-6 text-[#143D59]" />
                             </div>
+                            <h3 className="text-lg font-bold text-[#143D59] mb-2">Commission</h3>
+                            <p className="text-[#143D59]/60 text-sm font-medium leading-relaxed">Tarification Juste et avantageuse</p>
+                        </div>
+
+                        {/* Feature 3: Fiabilité */}
+                        <div className="bg-white rounded-xl p-6 flex flex-col items-center text-center border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                            <div className="w-12 h-12 bg-[#143D59]/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-[#143D59]/20 transition-colors">
+                                <Truck className="w-6 h-6 text-[#143D59]" />
+                            </div>
+                            <h3 className="text-lg font-bold text-[#143D59] mb-2">Fiabilité</h3>
+                            <p className="text-[#143D59]/60 text-sm font-medium leading-relaxed">Une livraison sûre et garantie</p>
                         </div>
                     </div>
                 </div>
