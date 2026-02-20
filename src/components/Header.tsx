@@ -54,7 +54,7 @@ export default function Header() {
     }, [isMenuOpen, isPartnersOpen]);
 
     const partnerLinks = [
-        { name: "Entreprise", href: "/partenaires/entreprise" },
+        { name: "Entreprises", href: "/partenaires/entreprise" },
         { name: "Restaurants", href: "/partenaires/restaurants" },
         { name: "Livreurs", href: "/partenaires/livreurs" },
     ];
