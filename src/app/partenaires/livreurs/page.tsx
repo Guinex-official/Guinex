@@ -150,28 +150,52 @@ export default function LivreursPage() {
             </section>
 
             {/* Section: Pourquoi devenir livreur Guinex */}
-            <section className="w-full py-16 md:py-24 bg-white flex flex-col items-center">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#143D59] text-center mb-16">
-                    Pourquoi devenir livreur Guinex
-                </h2>
+            <section className="w-full py-16 md:py-24 bg-[#f7f9fc] flex flex-col items-center">
+                {/* Section Header */}
+                <div className="flex flex-col items-center mb-14 px-4 text-center">
+                    <span className="text-[#F4B41A] font-bold text-sm tracking-[0.3em] uppercase mb-3">Vos avantages</span>
+                    <h2 className="text-3xl md:text-4xl font-black text-[#143D59]">
+                        Pourquoi devenir <span className="text-[#F4B41A]">livreur Guinex</span>
+                    </h2>
+                    <div className="mt-4 w-16 h-1 rounded-full bg-[#F4B41A]"></div>
+                </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl px-4 md:px-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl px-4 md:px-8">
                     {[
-                        { title: "Revenus r├®guliers", text: "Gagnez de l'argent ├á chaque course" },
-                        { title: "Horaires flexibles", text: "choisissez vos horaires et travaillez ├á votre rythme" },
-                        { title: "Organisation professionnelle", text: "Travaillez avec une ├®quipe serieuse et organis├®e" },
-                        { title: "Respect et s├®curit├®", text: "Rejoignez une entreprise qui valorise votre s├®curit├® et votre bien ├¬tre" }
+                        {
+                            icon: "💰",
+                            title: "Revenus réguliers",
+                            text: "Gagnez de l'argent à chaque course, avec des paiements fiables et réguliers.",
+                            color: "from-[#143D59] to-[#1c5278]"
+                        },
+                        {
+                            icon: "🕐",
+                            title: "Horaires flexibles",
+                            text: "Choisissez vos horaires et travaillez à votre propre rythme, en toute liberté.",
+                            color: "from-[#F4B41A] to-[#f5c842]"
+                        },
+                        {
+                            icon: "🏆",
+                            title: "Organisation pro",
+                            text: "Travaillez avec une équipe sérieuse, structurée et toujours disponible.",
+                            color: "from-[#143D59] to-[#1c5278]"
+                        },
+                        {
+                            icon: "🛡️",
+                            title: "Respect & sécurité",
+                            text: "Rejoignez une entreprise qui valorise votre sécurité et votre bien-être.",
+                            color: "from-[#F4B41A] to-[#f5c842]"
+                        }
                     ].map((benefit, i) => (
-                        <div key={i} className="flex flex-col group">
-                            {/* Card Header matching Services style (without icon) */}
-                            <div className="bg-[#D1D9E1] py-4 px-6 text-center flex items-center justify-center rounded-t-2xl shadow-md w-full z-10 relative">
-                                <h3 className="text-base font-bold text-[#143D59] leading-tight line-clamp-1">{benefit.title}</h3>
+                        <div key={i} className="group flex flex-col bg-white rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-1">
+                            {/* Card top accent */}
+                            <div className={`bg-gradient-to-br ${benefit.color} p-6 flex items-center justify-center`}>
+                                <span className="text-4xl">{benefit.icon}</span>
                             </div>
-                            {/* Card Body matching Services style */}
-                            <div className="bg-[#eff1f3] rounded-b-2xl shadow-sm group-hover:shadow-md transition-shadow p-8 flex-grow border border-gray-100 border-t-0 w-full flex items-center justify-center min-h-[140px]">
-                                <p className="text-[#143D59] text-center font-medium text-sm md:text-base leading-relaxed">
-                                    {benefit.text}
-                                </p>
+                            {/* Card body */}
+                            <div className="p-6 flex flex-col gap-2 flex-grow">
+                                <h3 className="text-[#143D59] font-extrabold text-lg">{benefit.title}</h3>
+                                <p className="text-gray-500 text-sm leading-relaxed">{benefit.text}</p>
                             </div>
                         </div>
                     ))}
@@ -179,6 +203,7 @@ export default function LivreursPage() {
             </section>
 
             {/* Section: Conditions and Form */}
+
             <section id="formulaire-candidature" className="w-full py-16 md:py-24 bg-white flex flex-col items-center">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 w-full max-w-6xl px-4 md:px-8">
 
@@ -383,6 +408,6 @@ export default function LivreursPage() {
             </section>
 
             <Footer />
-        </main>
+        </main >
     );
 }
