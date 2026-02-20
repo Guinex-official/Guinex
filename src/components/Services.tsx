@@ -24,13 +24,13 @@ export default function Services() {
                         {/* Card Body */}
                         <div className="bg-[#eff1f3] p-6 md:p-10 flex-grow w-full border border-gray-100 border-t-0">
                             <ul className="space-y-6">
-                                <li className="flex items-center justify-center md:justify-start text-[#143D59] text-base md:text-lg font-medium">
+                                <li className="flex items-center justify-start text-[#143D59] text-base md:text-lg font-medium">
                                     <div className="mr-4 flex-shrink-0 bg-white p-2 rounded-lg shadow-sm">
                                         <Image src="/images/icons/repasicon.png" width={24} height={24} alt="icon" className="w-5 h-5 md:w-6 md:h-6 object-contain" priority />
                                     </div>
                                     <span className="leading-tight">Livraison de repas pour les équipes</span>
                                 </li>
-                                <li className="flex items-center justify-center md:justify-start text-[#143D59] text-base md:text-lg font-medium">
+                                <li className="flex items-center justify-start text-[#143D59] text-base md:text-lg font-medium">
                                     <div className="mr-4 flex-shrink-0 bg-white p-2 rounded-lg shadow-sm">
                                         <Image src="/images/icons/serviceicon.png" width={24} height={24} alt="icon" className="w-5 h-5 md:w-6 md:h-6 object-contain" priority />
                                     </div>
@@ -52,19 +52,19 @@ export default function Services() {
                         {/* Card Body */}
                         <div className="bg-[#eff1f3] p-6 md:p-10 flex-grow w-full border border-gray-100 border-t-0">
                             <ul className="space-y-6">
-                                <li className="flex items-center justify-center md:justify-start text-[#143D59] text-base md:text-lg font-medium">
+                                <li className="flex items-center justify-start text-[#143D59] text-base md:text-lg font-medium">
                                     <div className="mr-4 flex-shrink-0 bg-white p-2 rounded-lg shadow-sm">
                                         <Image src="/images/icons/repasicon.png" width={24} height={24} alt="icon" className="w-5 h-5 md:w-6 md:h-6 object-contain" priority />
                                     </div>
                                     <span className="leading-tight">Livraison de repas</span>
                                 </li>
-                                <li className="flex items-center justify-center md:justify-start text-[#143D59] text-base md:text-lg font-medium">
+                                <li className="flex items-center justify-start text-[#143D59] text-base md:text-lg font-medium">
                                     <div className="mr-4 flex-shrink-0 bg-white p-2 rounded-lg shadow-sm">
                                         <Image src="/images/icons/colisicon.png" width={24} height={24} alt="icon" className="w-5 h-5 md:w-6 md:h-6 object-contain" priority />
                                     </div>
                                     <span className="leading-tight">Livraison de colis</span>
                                 </li>
-                                <li className="flex items-center justify-center md:justify-start text-[#143D59] text-base md:text-lg font-medium">
+                                <li className="flex items-center justify-start text-[#143D59] text-base md:text-lg font-medium">
                                     <div className="mr-4 flex-shrink-0 bg-white p-2 rounded-lg shadow-sm">
                                         <Image src="/images/icons/document.png" width={24} height={24} alt="icon" className="w-5 h-5 md:w-6 md:h-6 object-contain" priority />
                                     </div>
