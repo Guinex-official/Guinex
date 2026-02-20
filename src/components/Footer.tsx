@@ -46,22 +46,37 @@ export default function Footer() {
                     </a>
                 </div>
                 {/* Right Column: Google Play Section */}
-                <div className="md:w-fit md:mt-28 md:pl-12 lg:pl-16 md:border-l md:border-white/30 flex flex-col items-center md:items-start w-full md:w-auto mt-10 md:mt-28" suppressHydrationWarning>
-                    <div className="flex flex-col items-center md:items-start mb-6 font-black uppercase italic tracking-tighter leading-[0.9]">
-                        <span className="text-[#F4B41A] text-2xl md:text-3xl">Application</span>
-                        <span className="text-blue-400 text-3xl md:text-4xl">bientôt</span>
-                        <span className="text-[#F4B41A] text-2xl md:text-3xl">disponible</span>
+                <div className="md:w-fit md:mt-auto md:ml-auto flex flex-col items-center md:items-end w-full md:w-auto mt-10 md:mb-4 md:translate-y-8" suppressHydrationWarning>
+                    <div className="flex flex-col items-center md:items-end mb-6 font-bold tracking-normal leading-tight text-xl md:text-2xl">
+                        <span className="text-[#F4B41A]">Application</span>
+                        <span className="text-[#143D59]">bientôt</span>
+                        <span className="text-[#F4B41A]">disponible</span>
                     </div>
-                    <div className="relative group">
-                        <div className="absolute -inset-1 bg-white/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
-                        <Image
-                            src="/images/googleplay.PNG"
-                            width={160}
-                            height={48}
-                            alt="Google Play"
-                            className="relative object-contain h-12 w-auto brightness-110"
-                            priority
-                        />
+                    <div className="flex flex-col items-center md:items-end space-y-1" suppressHydrationWarning>
+                        {/* Google Play Badge */}
+                        <div className="relative group -my-4" suppressHydrationWarning>
+                            <div className="absolute -inset-1 bg-white/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-300" suppressHydrationWarning></div>
+                            <Image
+                                src="/images/googleplay.PNG"
+                                width={200}
+                                height={120}
+                                alt="Google Play"
+                                className="relative object-contain h-[120px] w-auto brightness-110 scale-125"
+                                priority
+                            />
+                        </div>
+                        {/* App Store Badge */}
+                        <div className="relative group" suppressHydrationWarning>
+                            <div className="absolute -inset-1 bg-white/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-300" suppressHydrationWarning></div>
+                            <Image
+                                src="/images/appstore.jpg"
+                                width={180}
+                                height={56}
+                                alt="App Store"
+                                className="relative object-contain h-[56px] w-auto brightness-110 rounded-xl"
+                                priority
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

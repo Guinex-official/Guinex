@@ -391,7 +391,7 @@ export default function LivreursPage() {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="w-full bg-[#F4B41A] text-[#143D59] font-extrabold py-5 rounded-xl shadow-lg hover:bg-yellow-500 transition-all text-xl md:text-2xl mt-6 uppercase tracking-wider flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+                                className="w-full bg-[#F4B41A] text-[#143D59] font-extrabold py-3.5 md:py-4 rounded-xl shadow-lg hover:bg-yellow-500 transition-all text-base md:text-lg mt-6 uppercase tracking-wider flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
                             >
                                 {isSubmitting ? (
                                     <>

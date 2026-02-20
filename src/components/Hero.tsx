@@ -71,18 +71,14 @@ export default function Hero() {
             {/* Content */}
             <div className="container mx-auto max-w-7xl px-4 z-10 relative h-full flex flex-col items-center justify-center lg:items-start lg:justify-center" suppressHydrationWarning>
                 <div className="max-w-4xl text-white text-center lg:text-left flex flex-col items-center lg:items-start" suppressHydrationWarning>
-                    <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] mb-6 tracking-tight drop-shadow-2xl">
-                        <span className="block lg:inline">
-                            <span className="text-white">La livraison </span>
-                            <span className="text-[#F4B41A]">simple, rapide</span>
-                        </span>
-                        <br className="hidden lg:block" />
-                        <span className="block lg:inline lg:ml-2 text-white">
-                            et professionnelle <span className="font-light text-white/90">en Guinée</span>
-                        </span>
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6 tracking-tight drop-shadow-2xl text-balance">
+                        <span className="text-white">La livraison </span>
+                        <span className="text-[#F4B41A]">simple, rapide </span>
+                        <span className="text-white">et professionnelle </span>
+                        <span className="font-light text-white/90">en Guinée</span>
                     </h1>
 
-                    <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 md:mb-10 font-medium tracking-wide" suppressHydrationWarning>
+                    <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-3 sm:gap-x-4 gap-y-2 text-base sm:text-lg md:text-xl lg:text-2xl mb-8 md:mb-10 font-semibold tracking-wide" suppressHydrationWarning>
                         {services.map((service, index) => (
                             <div key={service} className="flex items-center">
                                 <span
@@ -100,9 +96,9 @@ export default function Hero() {
                                 </span>
                                 {index < services.length - 1 && (
                                     <span
-                                        className="mx-2 text-[#F4B41A] font-black scale-150 drop-shadow-md"
+                                        className="hidden sm:inline mx-2 text-[#F4B41A] font-black scale-125 md:scale-150 drop-shadow-sm opacity-60"
                                         style={{
-                                            opacity: index < visibleCount - 1 ? 0.8 : 0,
+                                            opacity: index < visibleCount - 1 ? 0.6 : 0,
                                             transition: 'opacity 0.6s ease-out'
                                         }}
                                     >
