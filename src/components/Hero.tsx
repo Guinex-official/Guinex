@@ -50,7 +50,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative w-full h-[600px] md:h-[700px] flex items-center overflow-hidden" suppressHydrationWarning>
+        <section className="relative w-full min-h-screen md:min-h-[600px] lg:min-h-0 lg:h-auto lg:aspect-[3.3/1] flex items-start md:items-center overflow-hidden" suppressHydrationWarning>
             {/* Background Image Optimized */}
             <div className="absolute inset-0 z-0" suppressHydrationWarning>
                 <Image
@@ -64,15 +64,18 @@ export default function Hero() {
             </div>
 
             {/* Content */}
-            <div className="container mx-auto max-w-7xl px-4 z-10 relative h-full flex items-start pt-10 md:items-center md:pt-0" suppressHydrationWarning>
-                <div className="max-w-3xl text-white mb-8 md:mb-40" suppressHydrationWarning>
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 tracking-tight">
-                        <span className="block md:inline text-white">La livraison </span>
-                        <span className="block md:inline text-[#F4B41A]">simple, rapide</span>{" "}
-                        <span className="block md:inline whitespace-nowrap text-white">et professionnelle <span className="font-extralight text-white">en Guinée</span></span>
+            <div className="container mx-auto max-w-7xl px-4 z-10 relative h-full flex items-start pt-16 md:items-center md:pt-0" suppressHydrationWarning>
+                <div className="max-w-3xl text-white mb-2 md:mb-8 md:-mt-12" suppressHydrationWarning>
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 tracking-tight drop-shadow-lg">
+                        <span className="whitespace-nowrap inline-block">
+                            <span className="text-white">La livraison </span>
+                            <span className="text-[#F4B41A]">simple, rapide</span>
+                        </span>
+                        <br className="block" />
+                        <span className="inline whitespace-nowrap text-white">et professionnelle <span className="font-extralight text-white">en Guinée</span></span>
                     </h1>
 
-                    <div className="flex flex-wrap items-center gap-x-2 text-sm sm:text-lg md:text-xl lg:text-2xl mb-12 md:mb-16 font-light max-w-xl" suppressHydrationWarning>
+                    <div className="flex flex-wrap items-center gap-x-2 text-sm sm:text-lg md:text-xl lg:text-2xl mb-4 md:mb-6 font-light max-w-xl" suppressHydrationWarning>
                         {services.map((service, index) => (
                             <div key={service} className="flex items-center">
                                 <span
@@ -105,7 +108,7 @@ export default function Hero() {
 
                     <button
                         onClick={() => setIsModalOpen(true)}
-                        className="inline-block bg-[#F4B41A] text-[#143D59] font-bold py-3 px-8 md:py-4 md:px-10 rounded-full shadow-xl hover:bg-yellow-400 transition-all transform hover:-translate-y-1 active:scale-95 text-base md:text-lg"
+                        className="inline-block bg-[#F4B41A] text-[#143D59] font-bold py-2 px-6 md:py-3 md:px-8 rounded-full shadow-xl hover:bg-yellow-400 transition-all transform hover:-translate-y-1 active:scale-95 text-sm md:text-base"
                     >
                         Nous contacter
                     </button>

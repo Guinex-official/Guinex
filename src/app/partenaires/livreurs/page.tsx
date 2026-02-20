@@ -40,15 +40,48 @@ export default function LivreursPage() {
         }
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Simulate API call
-        setTimeout(() => {
+
+        const data = new FormData();
+        data.append('nom', formData.nom);
+        data.append('telephone', formData.telephone);
+        data.append('quartier', formData.quartier);
+        data.append('hasMoto', String(formData.hasMoto));
+        data.append('hasPermis', String(formData.hasPermis));
+        data.append('disponibilite', formData.disponibilite);
+
+        if (files.cv) data.append('cv', files.cv);
+        if (files.id) data.append('id', files.id);
+
+        try {
+            const response = await fetch('/api/livreur', {
+                method: 'POST',
+                body: data,
+            });
+
+            if (response.ok) {
+                setIsSuccess(true);
+                setFormData({
+                    nom: "",
+                    telephone: "",
+                    quartier: "",
+                    hasMoto: true,
+                    hasPermis: true,
+                    disponibilite: "Temps plein",
+                });
+                setFiles({ cv: null, id: null });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                alert("Une erreur est survenue lors de l'envoi de la candidature.");
+            }
+        } catch (error) {
+            console.error("Erreur:", error);
+            alert("Une erreur est survenue lors de l'envoi de la candidature.");
+        } finally {
             setIsSubmitting(false);
-            setIsSuccess(true);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }, 2000);
+        }
     };
 
     if (isSuccess) {

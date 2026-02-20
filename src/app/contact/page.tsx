@@ -20,15 +20,37 @@ export default function ContactPage() {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Simulation d'envoi
-        setTimeout(() => {
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setIsSuccess(true);
+                setFormData({
+                    nom: "",
+                    telephone: "",
+                    email: "",
+                    message: ""
+                });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                alert("Une erreur est survenue lors de l'envoi du message.");
+            }
+        } catch (error) {
+            console.error("Erreur:", error);
+            alert("Une erreur est survenue lors de l'envoi du message.");
+        } finally {
             setIsSubmitting(false);
-            setIsSuccess(true);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }, 2000);
+        }
     };
 
     if (isSuccess) {
