@@ -94,9 +94,9 @@ body {
 }
 
 .shadow-mission-glow:hover {
-    box-shadow: 0 20px 50px -12px rgba(20, 61, 89, 0.4);
+    box-shadow: 0 0 40px 5px rgba(20, 61, 89, 0.6);
 }
 
 .shadow-vision-glow:hover {
-    box-shadow: 0 20px 50px -12px rgba(244, 180, 26, 0.4);
+    box-shadow: 0 0 40px 5px rgba(244, 180, 26, 0.6);
 }

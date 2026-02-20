@@ -47,7 +47,7 @@ export default function AboutPage() {
                     {/* Right Column: Cards */}
                     <div className="lg:col-span-5 space-y-8">
                         {/* Mission Card */}
-                        <div className="flex flex-col group animate-reveal-right shadow-mission-glow transition-all duration-500 rounded-3xl" style={{ animationDelay: '0.2s' }}>
+                        <div className="flex flex-col group animate-reveal-right shadow-mission-glow transition-all duration-500 rounded-3xl cursor-pointer hover:scale-[1.03] hover:brightness-110" style={{ animationDelay: '0.2s' }}>
                             <div className="bg-[#143D59] py-4 px-8 text-center rounded-t-3xl shadow-lg w-full z-10 relative">
                                 <h2 className="text-xl md:text-2xl font-bold text-white uppercase tracking-wider">
                                     Notre mission
@@ -61,7 +61,7 @@ export default function AboutPage() {
                         </div>
 
                         {/* Vision Card */}
-                        <div className="flex flex-col group animate-reveal-left shadow-vision-glow transition-all duration-500 rounded-3xl" style={{ animationDelay: '0.4s' }}>
+                        <div className="flex flex-col group animate-reveal-left shadow-vision-glow transition-all duration-500 rounded-3xl cursor-pointer hover:scale-[1.03] hover:brightness-110" style={{ animationDelay: '0.4s' }}>
                             <div className="bg-[#F4B41A] py-4 px-8 text-center rounded-t-3xl shadow-lg w-full z-10 relative">
                                 <h2 className="text-xl md:text-2xl font-bold text-[#143D59] uppercase tracking-wider">
                                     Notre vision
