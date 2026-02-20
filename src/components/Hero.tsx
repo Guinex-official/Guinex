@@ -70,15 +70,15 @@ export default function Hero() {
 
             {/* Content */}
             <div className="container mx-auto max-w-7xl px-4 z-10 relative h-full flex flex-col items-center justify-center lg:items-start lg:justify-center" suppressHydrationWarning>
-                <div className="max-w-4xl text-white text-center lg:text-left flex flex-col items-center lg:items-start" suppressHydrationWarning>
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6 tracking-tight drop-shadow-2xl text-balance">
+                <div className="w-full max-w-4xl text-white text-center lg:text-left flex flex-col items-center lg:items-start" suppressHydrationWarning>
+                    <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-black leading-tight mb-6 tracking-tight drop-shadow-2xl lg:text-balance">
                         <span className="text-white">La livraison </span>
                         <span className="text-[#F4B41A]">simple, rapide </span>
                         <span className="text-white">et professionnelle </span>
                         <span className="font-light text-white/90">en Guinée</span>
                     </h1>
 
-                    <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-3 sm:gap-x-4 gap-y-2 text-base sm:text-lg md:text-xl lg:text-2xl mb-8 md:mb-10 font-semibold tracking-wide" suppressHydrationWarning>
+                    <div className="w-full flex flex-wrap items-center justify-center lg:justify-start gap-x-3 sm:gap-x-4 gap-y-2 text-lg sm:text-xl md:text-xl lg:text-2xl mb-8 md:mb-10 font-semibold tracking-wide" suppressHydrationWarning>
                         {services.map((service, index) => (
                             <div key={service} className="flex items-center">
                                 <span
