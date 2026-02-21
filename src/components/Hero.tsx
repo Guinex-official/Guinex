@@ -50,7 +50,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative w-full min-h-[90vh] md:min-h-screen lg:min-h-0 lg:h-auto lg:aspect-[3.3/1] flex items-center overflow-hidden bg-[#143D59]" suppressHydrationWarning>
+        <section className="relative w-full min-h-[70vh] md:min-h-screen lg:min-h-0 lg:h-auto lg:aspect-[3.3/1] flex items-center overflow-hidden bg-[#143D59]" suppressHydrationWarning>
             {/* Background Image Optimized */}
             <div className="absolute inset-0 z-0" suppressHydrationWarning>
                 <Image

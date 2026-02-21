@@ -95,8 +95,7 @@ export default function ContactPage() {
                         alt="Contact Guinex"
                         fill
                         priority
-                        className="object-cover"
-                        style={{ objectFit: 'cover' }}
+                        className="object-cover !object-right md:!object-center"
                     />
                     <div className="absolute inset-0 bg-[#143D59]/80 backdrop-blur-[2px]"></div>
                 </div>

@@ -145,7 +145,7 @@ export default function EntreprisePage() {
                     onClick={() => setIsModalOpen(true)}
                     className="bg-[#F4B41A] text-[#143D59] font-bold py-3 px-8 rounded-md shadow-md hover:bg-yellow-500 transition-colors text-lg"
                 >
-                    contactez Guinex maintenant
+                    Demander un devis
                 </button>
             </section>
 

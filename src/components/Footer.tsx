@@ -46,13 +46,13 @@ export default function Footer() {
                     </a>
                 </div>
                 {/* Right Column: Google Play Section */}
-                <div className="md:w-fit md:mt-auto md:ml-auto flex flex-col items-center md:items-end w-full md:w-auto mt-10 md:mb-4 md:translate-y-8" suppressHydrationWarning>
-                    <div className="flex flex-col items-center md:items-end mb-6 font-bold tracking-normal leading-tight text-xl md:text-2xl" suppressHydrationWarning>
+                <div className="md:w-fit md:mt-auto md:ml-auto flex flex-col items-center md:items-center w-full md:w-auto mt-10 md:mb-4 md:translate-y-8" suppressHydrationWarning>
+                    <div className="flex flex-col items-center md:items-center mb-6 font-bold tracking-normal leading-tight text-xl md:text-2xl" suppressHydrationWarning>
                         <span className="text-[#F4B41A]">Application</span>
-                        <span className="text-[#143D59]">bientôt</span>
+                        <span className="text-white">bientôt</span>
                         <span className="text-[#F4B41A]">disponible</span>
                     </div>
-                    <div className="flex flex-col items-center md:items-end space-y-1" suppressHydrationWarning>
+                    <div className="flex flex-col items-center md:items-center space-y-1" suppressHydrationWarning>
                         {/* Google Play Badge */}
                         <div className="relative group -my-4" suppressHydrationWarning>
                             <div className="absolute -inset-1 bg-white/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-300" suppressHydrationWarning></div>
@@ -98,7 +98,7 @@ export default function Footer() {
                     alt="Support"
                     layout="fill"
                     objectFit="cover"
-                    objectPosition="right bottom"
+                    className="!object-left md:!object-right-bottom"
                 />
             </div>
         </footer>
