@@ -49,7 +49,7 @@ export default function Footer() {
                 <div className="md:w-fit md:mt-auto md:ml-auto flex flex-col items-center md:items-center w-full md:w-auto mt-10 md:mb-4 md:translate-y-8" suppressHydrationWarning>
                     <div className="flex flex-col items-center md:items-center mb-6 font-bold tracking-normal leading-tight text-xl md:text-2xl" suppressHydrationWarning>
                         <span className="text-[#F4B41A]">Application</span>
-                        <span className="text-white">bientôt</span>
+                        <span className="text-white md:text-[#143D59]">bientôt</span>
                         <span className="text-[#F4B41A]">disponible</span>
                     </div>
                     <div className="flex flex-col items-center md:items-center space-y-1" suppressHydrationWarning>
