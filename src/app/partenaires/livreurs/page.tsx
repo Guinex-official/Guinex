@@ -17,24 +17,24 @@ export default function LivreursPage() {
         disponibilite: "Temps plein",
     });
 
-    const [files, setFiles] = useState<{ cv: File | null; id: File | null }>({
-        cv: null,
-        id: null,
+    const [files, setFiles] = useState<{ identity: File | null; permit: File | null }>({
+        identity: null,
+        permit: null,
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
 
     // Refs for hidden file inputs
-    const cvInputRef = useRef<HTMLInputElement>(null);
-    const idInputRef = useRef<HTMLInputElement>(null);
+    const identityInputRef = useRef<HTMLInputElement>(null);
+    const permitInputRef = useRef<HTMLInputElement>(null);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, type: 'cv' | 'id') => {
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, type: 'identity' | 'permit') => {
         if (e.target.files && e.target.files[0]) {
             setFiles(prev => ({ ...prev, [type]: e.target.files![0] }));
         }
@@ -52,8 +52,8 @@ export default function LivreursPage() {
         data.append('hasPermis', String(formData.hasPermis));
         data.append('disponibilite', formData.disponibilite);
 
-        if (files.cv) data.append('cv', files.cv);
-        if (files.id) data.append('id', files.id);
+        if (files.identity) data.append('identity', files.identity);
+        if (files.permit) data.append('permit', files.permit);
 
         try {
             const response = await fetch('/api/livreur', {
@@ -350,39 +350,39 @@ export default function LivreursPage() {
                             <div className="flex flex-col gap-4 pt-2">
                                 <input
                                     type="file"
-                                    ref={cvInputRef}
+                                    ref={identityInputRef}
                                     className="hidden"
-                                    onChange={(e) => handleFileChange(e, 'cv')}
-                                    accept=".pdf,.doc,.docx"
+                                    onChange={(e) => handleFileChange(e, 'identity')}
+                                    accept=".pdf,.doc,.docx,image/*"
                                 />
                                 <div
-                                    onClick={() => cvInputRef.current?.click()}
+                                    onClick={() => identityInputRef.current?.click()}
                                     className="flex items-center rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-white cursor-pointer group hover:border-[#F4B41A]/50 transition-colors"
                                 >
                                     <div className="bg-[#143D59] text-white px-5 py-4 font-bold text-sm md:text-base whitespace-nowrap group-hover:bg-[#1c4d6f] transition-colors">
-                                        Choisir un fichier
+                                        Pièce d'identité
                                     </div>
-                                    <span className={`px-5 text-sm md:text-base italic truncate ${files.cv ? 'text-[#143D59] font-medium' : 'text-gray-400'}`}>
-                                        {files.cv ? files.cv.name : "Aucun fichier choisi (CV)"}
+                                    <span className={`px-5 text-sm md:text-base italic truncate ${files.identity ? 'text-[#143D59] font-medium' : 'text-gray-400'}`}>
+                                        {files.identity ? files.identity.name : "Aucun fichier choisi (Pièce d'identité)"}
                                     </span>
                                 </div>
 
                                 <input
                                     type="file"
-                                    ref={idInputRef}
+                                    ref={permitInputRef}
                                     className="hidden"
-                                    onChange={(e) => handleFileChange(e, 'id')}
+                                    onChange={(e) => handleFileChange(e, 'permit')}
                                     accept="image/*,.pdf"
                                 />
                                 <div
-                                    onClick={() => idInputRef.current?.click()}
+                                    onClick={() => permitInputRef.current?.click()}
                                     className="flex items-center rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-white cursor-pointer group hover:border-[#F4B41A]/50 transition-colors"
                                 >
                                     <div className="bg-[#F4B41A] text-[#143D59] px-5 py-4 font-bold text-sm md:text-base whitespace-nowrap group-hover:bg-yellow-500 transition-colors">
-                                        Choisir un fichier
+                                        Permis de conduire
                                     </div>
-                                    <span className={`px-5 text-sm md:text-base italic truncate ${files.id ? 'text-[#143D59] font-medium' : 'text-gray-400'}`}>
-                                        {files.id ? files.id.name : "Aucun fichier choisi (ID)"}
+                                    <span className={`px-5 text-sm md:text-base italic truncate ${files.permit ? 'text-[#143D59] font-medium' : 'text-gray-400'}`}>
+                                        {files.permit ? files.permit.name : "Aucun fichier choisi (Permis)"}
                                     </span>
                                 </div>
                             </div>

@@ -14,8 +14,8 @@ export async function POST(req: Request) {
         const hasMoto = formData.get('hasMoto') === 'true';
         const hasPermis = formData.get('hasPermis') === 'true';
         const disponibilite = formData.get('disponibilite') as string;
-        const cvFile = formData.get('cv') as File | null;
-        const idFile = formData.get('id') as File | null;
+        const identityFile = formData.get('identity') as File | null;
+        const permitFile = formData.get('permit') as File | null;
 
         if (!nom || !telephone || !quartier) {
             return NextResponse.json(
@@ -25,17 +25,17 @@ export async function POST(req: Request) {
         }
 
         const attachments = [];
-        if (cvFile) {
-            const buffer = Buffer.from(await cvFile.arrayBuffer());
+        if (identityFile) {
+            const buffer = Buffer.from(await identityFile.arrayBuffer());
             attachments.push({
-                filename: cvFile.name,
+                filename: identityFile.name,
                 content: buffer,
             });
         }
-        if (idFile) {
-            const buffer = Buffer.from(await idFile.arrayBuffer());
+        if (permitFile) {
+            const buffer = Buffer.from(await permitFile.arrayBuffer());
             attachments.push({
-                filename: idFile.name,
+                filename: permitFile.name,
                 content: buffer,
             });
         }
@@ -51,6 +51,8 @@ export async function POST(req: Request) {
           Moto: ${hasMoto ? 'Oui' : 'Non'}
           Permis: ${hasPermis ? 'Oui' : 'Non'}
           Disponibilité: ${disponibilite}
+          Pièce d'identité jointe: ${identityFile ? 'Oui' : 'Non'}
+          Permis de conduire joint: ${permitFile ? 'Oui' : 'Non'}
         `,
             html: `
           <h1>Nouvelle candidature Livreur</h1>
@@ -60,6 +62,8 @@ export async function POST(req: Request) {
           <p><strong>Moto:</strong> ${hasMoto ? 'Oui' : 'Non'}</p>
           <p><strong>Permis:</strong> ${hasPermis ? 'Oui' : 'Non'}</p>
           <p><strong>Disponibilité:</strong> ${disponibilite}</p>
+          <p><strong>Pièce d'identité:</strong> ${identityFile ? 'Présente' : 'Absente'}</p>
+          <p><strong>Permis de conduire:</strong> ${permitFile ? 'Présent' : 'Absent'}</p>
         `,
             attachments,
         };
