@@ -16,8 +16,6 @@ export default function AboutPage() {
                 <div className="absolute bottom-[20%] right-[-5%] w-[35%] h-[35%] bg-[#F4B41A]/5 blur-[100px] rounded-full z-0"></div>
                 <div className="absolute top-[40%] right-[10%] w-[20%] h-[20%] bg-[#143D59]/3 blur-[80px] rounded-full z-0"></div>
 
-                <Header />
-
                 <div className="flex-grow container mx-auto max-w-7xl px-4 py-8 md:py-16 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mb-16 items-start">
                         {/* Left Column: Description Text */}
