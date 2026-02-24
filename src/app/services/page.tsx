@@ -7,7 +7,7 @@ import { Utensils, Package } from "lucide-react";
 
 export default function ServicesPage() {
     return (
-        <main className="min-h-screen flex flex-col relative bg-transparent" suppressHydrationWarning={true}>
+        <main className="min-h-screen flex flex-col relative bg-transparent overflow-x-hidden" suppressHydrationWarning={true}>
             <Header />
             <div className="overflow-x-hidden">
 

@@ -10,7 +10,7 @@ import ContactModal from "@/components/ui/ContactModal";
 export default function RestaurantsPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     return (
-        <main className="flex flex-col min-h-screen bg-white">
+        <main className="flex flex-col min-h-screen bg-white overflow-x-hidden">
             <Header />
 
             {/* Hero Section */}
@@ -126,7 +126,7 @@ export default function RestaurantsPage() {
             <section className="w-full pt-4 pb-20 flex flex-col items-center text-center px-4">
                 <button
                     onClick={() => setIsModalOpen(true)}
-                    className="w-full sm:w-auto inline-flex items-center justify-center bg-[#F4B41A] text-[#143D59] font-extrabold py-3.5 md:py-4 px-10 md:px-14 rounded-xl shadow-lg hover:bg-yellow-500 hover:shadow-xl transition-all text-base md:text-lg uppercase tracking-widest active:scale-95"
+                    className="w-full sm:w-auto inline-flex items-center justify-center bg-[#F4B41A] text-[#143D59] font-extrabold py-3.5 md:py-4 px-10 md:px-14 rounded-full shadow-lg hover:bg-yellow-500 hover:scale-105 hover:shadow-xl transition-all text-base md:text-lg uppercase tracking-widest active:scale-95"
                 >
                     Devenir partenaire
                 </button>

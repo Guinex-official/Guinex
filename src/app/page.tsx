@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
     return (
-        <main className="min-h-screen flex flex-col" suppressHydrationWarning>
+        <main className="min-h-screen flex flex-col overflow-x-hidden" suppressHydrationWarning>
             <Header />
             <Hero />
             <Services />

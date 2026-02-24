@@ -78,7 +78,7 @@ export default function LivreursPage() {
 
     if (isSuccess) {
         return (
-            <main className="flex flex-col min-h-screen bg-white">
+            <main className="flex flex-col min-h-screen bg-white overflow-x-hidden">
                 <Header />
                 <section className="flex-grow flex flex-col items-center justify-center py-24 px-4 text-center">
                     <div className="bg-[#F1F4F7] p-12 md:p-20 rounded-3xl shadow-xl flex flex-col items-center max-w-2xl w-full border border-gray-100">
@@ -93,7 +93,7 @@ export default function LivreursPage() {
                         </p>
                         <button
                             onClick={() => window.location.href = '/'}
-                            className="bg-[#F4B41A] text-[#143D59] font-extrabold py-5 px-12 rounded-xl shadow-lg hover:bg-yellow-500 transition-all text-xl uppercase tracking-widest"
+                            className="bg-[#F4B41A] text-[#143D59] font-extrabold py-5 px-12 rounded-full shadow-lg hover:bg-yellow-500 hover:scale-105 transition-all text-xl uppercase tracking-widest active:scale-95"
                         >
                             Retour à l'accueil
                         </button>
@@ -105,7 +105,7 @@ export default function LivreursPage() {
     }
 
     return (
-        <main className="flex flex-col min-h-screen bg-white">
+        <main className="flex flex-col min-h-screen bg-white overflow-x-hidden">
             <Header />
 
             {/* Hero Section */}
@@ -142,7 +142,7 @@ export default function LivreursPage() {
                     {/* Hero CTA */}
                     <button
                         onClick={() => document.getElementById('formulaire-candidature')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="bg-[#F4B41A] text-[#143D59] font-extrabold py-3.5 px-10 md:px-14 rounded-lg shadow-lg hover:bg-yellow-500 transition-all text-sm md:text-lg transform active:scale-95"
+                        className="bg-[#F4B41A] text-[#143D59] font-extrabold py-3.5 px-10 md:px-14 rounded-full shadow-lg hover:bg-yellow-500 hover:scale-105 transition-all text-sm md:text-lg transform active:scale-95"
                     >
                         Devenir livreur Guinex
                     </button>
@@ -391,7 +391,7 @@ export default function LivreursPage() {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="w-full bg-[#F4B41A] text-[#143D59] font-extrabold py-3.5 md:py-4 rounded-xl shadow-lg hover:bg-yellow-500 transition-all text-base md:text-lg mt-6 uppercase tracking-wider flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+                                className="w-full bg-[#F4B41A] text-[#143D59] font-extrabold py-3.5 md:py-4 rounded-full shadow-lg hover:bg-yellow-500 hover:scale-105 transition-all text-base md:text-lg mt-6 uppercase tracking-wider flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
                             >
                                 {isSubmitting ? (
                                     <>

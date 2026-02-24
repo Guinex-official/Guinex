@@ -8,9 +8,9 @@ import { Check } from "lucide-react";
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen flex flex-col bg-white relative">
+        <main className="min-h-screen flex flex-col bg-white relative overflow-x-hidden">
             <Header />
-            <div className="overflow-hidden">
+            <div className="relative overflow-hidden">
                 {/* Background Decorative Elements */}
                 <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#143D59]/5 blur-[120px] rounded-full z-0"></div>
                 <div className="absolute bottom-[20%] right-[-5%] w-[35%] h-[35%] bg-[#F4B41A]/5 blur-[100px] rounded-full z-0"></div>

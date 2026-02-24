@@ -11,7 +11,7 @@ import ContactModal from "@/components/ui/ContactModal";
 export default function EntreprisePage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     return (
-        <main className="flex flex-col min-h-screen bg-white">
+        <main className="flex flex-col min-h-screen bg-white overflow-x-hidden">
             <Header />
 
             {/* Hero Section */}
@@ -143,7 +143,7 @@ export default function EntreprisePage() {
                 </div>
                 <button
                     onClick={() => setIsModalOpen(true)}
-                    className="bg-[#F4B41A] text-[#143D59] font-bold py-3 px-8 rounded-md shadow-md hover:bg-yellow-500 transition-colors text-lg"
+                    className="bg-[#F4B41A] text-[#143D59] font-extrabold py-3.5 px-10 rounded-full shadow-lg hover:bg-yellow-500 hover:scale-105 transition-all text-lg uppercase tracking-wider"
                 >
                     Demander un devis
                 </button>
