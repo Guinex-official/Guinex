@@ -1,3 +1,15 @@
+# Guinex – Livraison Express en Guinée
+
+Site vitrine Next.js pour Guinex (livraison repas, coursier, candidatures livreurs).
+
+**Projet réalisé par :** [Martial De-Paul](https://martial-bourangon-webdesigner.vercel.app/)
+
+## Documentation client / livraison
+
+**Pour le client et tout nouveau développeur :** voir **[DOCUMENTATION-CLIENT.md](./DOCUMENTATION-CLIENT.md)**. Ce document contient tout le nécessaire pour prendre le projet en main, configurer les emails, déployer (ex. Vercel) et connecter le nom de domaine.
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

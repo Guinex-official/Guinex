@@ -84,9 +84,20 @@ export default function Footer() {
             {/* Copyright Section */}
             <div className="container mx-auto max-w-7xl px-4 relative z-10" suppressHydrationWarning>
                 <div className="border-t border-white/20 pt-8 pb-12 text-center" suppressHydrationWarning>
-                    <div className="flex flex-col items-center" suppressHydrationWarning>
+                    <div className="flex flex-col items-center gap-2" suppressHydrationWarning>
                         <p className="text-sm md:text-base text-white/70 font-medium tracking-wide">
                             © 2026 <span className="text-[#F4B41A]">Guinex Livraison Express</span>. Tous droits réservés.
+                        </p>
+                        <p className="text-sm text-white/60">
+                            Projet réalisé par{" "}
+                            <Link
+                                href="https://martial-bourangon-webdesigner.vercel.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-[#F4B41A] md:text-white hover:underline font-medium"
+                            >
+                                Martial De-Paul
+                            </Link>
                         </p>
                     </div>
                 </div>
