@@ -220,7 +220,7 @@ export default function ContactPage() {
                                                 required
                                                 value={formData.nom}
                                                 onChange={handleInputChange}
-                                                placeholder="Fils Preley"
+                                                placeholder="Fils Presley"
                                                 className="w-full px-6 py-4 rounded-2xl border-2 border-gray-50 focus:border-[#F4B41A] outline-none bg-gray-50/50 transition-all text-[#143D59] placeholder:text-gray-300 font-medium"
                                             />
                                         </div>
@@ -256,7 +256,7 @@ export default function ContactPage() {
                                             required
                                             value={formData.message}
                                             onChange={handleInputChange}
-                                            placeholder="Comment pouvons-nous vous aider ?"
+                                            placeholder="Comment pouvons-nous vous aidez ?"
                                             rows={5}
                                             className="w-full px-6 py-4 rounded-2xl border-2 border-gray-50 focus:border-[#F4B41A] outline-none bg-gray-50/50 transition-all text-[#143D59] placeholder:text-gray-300 font-medium resize-none"
                                         ></textarea>

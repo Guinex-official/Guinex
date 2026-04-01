@@ -34,7 +34,7 @@ export default function RestaurantsPage() {
                     {/* Hero Title */}
                     <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-extrabold text-white text-center leading-tight mb-8 md:mb-20 lg:mb-24 max-w-4xl drop-shadow-[0_4px_10px_rgba(0,0,0,0.3)] px-2">
                         Optimisez la livraison de vos repas et <br className="hidden md:block" />
-                        développez vos ventes avec Guinex
+                        développez vos ventes 
                     </h1>
 
                     {/* Services Grid */}
