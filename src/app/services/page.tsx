@@ -85,7 +85,7 @@ export default function ServicesPage() {
                                         Un service adapté aux entreprises comme aux particuliers, avec suivi des envois et gain de temps pour vos équipes.
                                     </p>
                                     <p className="text-lg md:text-xl font-bold text-[#F4B41A] uppercase tracking-tight drop-shadow-md">
-                                        Guinex, une solution locale pensée pour les réalités du terrain.
+                                        Guinex, une solution locale pensée pour les réalités du marché Guinnéen.
                                     </p>
                                 </div>
                             </div>
